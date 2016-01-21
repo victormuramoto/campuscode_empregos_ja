@@ -3,7 +3,12 @@
     <div class="jobs">
       <h3><%= job.title %></h1>
       <p><%= job.location %></p>
-      <p><%= job.company.name %></p>
+      <p>
+        <%= job.company.name %>
+        <% if job.company.premium? %>
+          - <em>Empresa Premium</em>
+        <% end %>
+      </p>
       <p><%= job.category.name %></p>
       <% if job.recent? %>
         <p><em>Novidade</em></p>
@@ -22,4 +27,3 @@
     <%= link_to category.name, category %>
   <% end %>
 </aside>
-
