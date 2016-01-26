@@ -3,6 +3,7 @@ require 'rails_helper'
 feature 'User creates a new company' do
 
   scenario 'successfully' do
+    user = login_user
     company = Company.new(name:     'Campus Code',
                           location: 'São Paulo',
                           mail:     'contato@campuscode.com.br',
@@ -24,6 +25,7 @@ feature 'User creates a new company' do
   end
 
   scenario 'invalid' do
+    user = login_user
     visit new_company_path
     click_on 'Criar Empresa'
 

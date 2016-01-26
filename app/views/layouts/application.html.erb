@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<h1>Emprego Já</h1>
+<h1>Emprego Já <% if user_signed_in? %> - Usuário Logado <% end %></h1>
 <%= yield %>
 
 </body>

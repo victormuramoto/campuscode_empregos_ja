@@ -18,4 +18,18 @@ module ModelsMacros
                location: 'São Paulo - SP',
                category: category)
   end
+
+  def login_user
+    user = User.create(email: 'allan@a.com.br', password:'12345678')
+
+
+    visit new_user_session_path
+
+    fill_in 'user[email]',     with: 'allan@a.com.br'
+    fill_in 'user[password]',     with: '12345678'
+
+    click_on 'Log in'
+
+    user
+  end
 end

@@ -3,66 +3,56 @@ require 'rails_helper'
 feature 'Authenticate user' do
 
   scenario 'successfully' do
-    user = User.create(name: 'Allan',
-                       password:'123'.crypt('Allan')
-    )
+    login_user
 
-    visit login_users_path
-
-    fill_in 'user[name]',     with: 'Allan'
-    fill_in 'user[password]',     with: '123'
-
-    click_on 'Logar'
+    visit root_path
 
     expect(page).to have_content 'Usuário Logado'
-
   end
 
   scenario 'unsuccessfully' do
-    user = User.create(name: 'Allan',
-                       password:'123'.crypt('Allan')
-    )
-
-    visit login_users_path
-
-    fill_in 'user[name]',     with: 'Allan'
-    fill_in 'user[password]',     with: 'abc'
-
-    click_on 'Logar'
+    visit root_path
 
     expect(page).to_not have_content 'Usuário Logado'
-
   end
 
-  scenario 'User logged accessing protected methods' do
-    user = User.create(name: 'Allan',
-                       password:'123'.crypt('Allan')
-    )
+  scenario 'User logged accessing jobs new method' do
+    user = login_user
 
-    visit login_users_path
-
-    fill_in 'user[name]',     with: 'Allan'
-    fill_in 'user[password]',     with: '123'
-
-    click_on 'Logar'
-
-    if user.get_session
-      visit new_job_path
-    end
-    expect(page).to have_content 'Nova Vaga'
-
-  end
-
-  scenario 'User not logged accessing protected methods' do
-    user = User.create(name: 'Allan',
-                       password:'123'.crypt('Allan')
-    )
     visit new_job_path
-    if !user.get_session
-      expect(page).to have_content 'Logar'
-    end
 
+    expect(page).to have_content 'Nova Vaga'
   end
 
+  scenario 'User not logged accessing jobs new method' do
+    visit new_job_path
 
+    expect(page).to have_content 'Log in'
+  end
+
+  scenario 'User not logged accessing jobs edit method' do
+    job = create_job
+    visit edit_job_path(job)
+
+    expect(page).to have_content 'Log in'
+  end
+
+  scenario 'User not logged accessing categories new method' do
+    visit new_category_path
+
+    expect(page).to have_content 'Log in'
+  end
+
+  scenario 'User not logged accessing companies new method' do
+    visit new_company_path
+
+    expect(page).to have_content 'Log in'
+  end
+
+  scenario 'User not logged accessing companies edit method' do
+    company = create_company
+    visit edit_company_path(company)
+
+    expect(page).to have_content 'Log in'
+  end
 end

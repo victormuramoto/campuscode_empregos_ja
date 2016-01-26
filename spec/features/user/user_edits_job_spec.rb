@@ -3,6 +3,8 @@ require 'rails_helper'
 feature 'User creates a new job' do
 
   scenario 'successfully' do
+    login_user
+
     company = Company.create(name:    'Campus Code',
                             location: 'São Paulo',
                             mail:     'contato@campuscode.com.br',
@@ -41,6 +43,8 @@ feature 'User creates a new job' do
   end
 
   scenario 'featured job' do
+    login_user
+    
     company = Company.create(name:     'Campus Code',
                             location: 'São Paulo',
                             mail:     'contato@campuscode.com.br',
@@ -76,4 +80,3 @@ feature 'User creates a new job' do
 
 
 end
-
