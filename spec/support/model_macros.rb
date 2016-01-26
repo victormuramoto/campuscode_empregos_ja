@@ -13,10 +13,12 @@ module ModelsMacros
   def create_job(company = nil, category = nil)
     company ||= create_company
     category ||= create_category
+    contract = Contract.create(name: 'CLT')
     company.jobs.create(title: 'Desenvolvedor Rails',
                description: 'Desenvolvedor Full Stack Rails',
                location: 'São Paulo - SP',
-               category: category)
+               category: category,
+               contract: contract)
   end
 
   def login_user

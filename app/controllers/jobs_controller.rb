@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 
-  before_action :set_collections, only: [:new, :create, :edit]
+  before_action :set_collections, only: [:new, :create, :edit, :update]
   before_action :set_job, only: [:edit, :show, :update]
 
   def show
@@ -36,6 +36,7 @@ class JobsController < ApplicationController
   def set_collections
     @categories = Category.all
     @companies = Company.all
+    @contracts = Contract.all
   end
 
   def set_job

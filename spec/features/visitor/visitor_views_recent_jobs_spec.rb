@@ -8,12 +8,7 @@ feature 'Visitor view recent jobs' do
                              phone:    '2369-3476')
 
     category = Category.create(name: 'Desenvolvedor')
-
-    Job.create(title: 'Vaga de Dev',
-               description: 'Dev Junior Rails com ao menos um projeto',
-               location: 'São Paulo',
-               company: company,
-               category: category)
+    job = create_job(company,category)
 
     visit root_path
 

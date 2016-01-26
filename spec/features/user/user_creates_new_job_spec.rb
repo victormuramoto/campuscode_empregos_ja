@@ -11,10 +11,7 @@ feature 'User creates a new job' do
 
     category = Category.create(name: 'Desenvolvedor')
 
-    job = Job.new(title: 'Dev Master',
-                  location: 'Rio de Janeiro',
-                  category: category,
-                  description: 'Vaga para Dev Master para Bootcamp Rails')
+    job = create_job(company,category)
 
     visit new_job_path
 
@@ -22,6 +19,7 @@ feature 'User creates a new job' do
     fill_in 'Location',    with: job.location
     select category.name,  from: 'Category'
     select company.name,   from: 'Company'
+    select contract.name,  from: job.contract.name
     fill_in 'Description', with: job.description
 
     click_on 'Criar Vaga'
@@ -29,6 +27,7 @@ feature 'User creates a new job' do
     expect(page).to have_content job.title
     expect(page).to have_content job.location
     expect(page).to have_content job.category.name
+    expect(page).to have_content job.contract.name
     expect(page).to have_content company.name
     expect(page).to have_content job.description
   end
@@ -43,10 +42,8 @@ feature 'User creates a new job' do
 
     category = Category.create(name: 'Desenvolvedor')
 
-    job = Job.new(title:    'Dev Master',
-                  location: 'Rio de Janeiro',
-                  category: category,
-                  description: 'Vaga para Dev Master para o Bootcamp Rails')
+    job = create_job(company,category)
+
     visit new_job_path
     fill_in 'Title',       with: job.title
     fill_in 'Location',    with: job.location

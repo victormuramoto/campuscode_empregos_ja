@@ -19,32 +19,32 @@ feature 'User creates a new job' do
 
     new_category = Category.create(name: 'Dev Ninja')
 
-    job = Job.create(title: 'Vaga de Dev',
-               description: 'Dev Junior Rails com ao menos um projeto',
-               location: 'São Paulo',
-               company: company,
-               category: category)
+    new_contract = Category.create(name: 'PJ')
+
+    job = create_job(company,category)
 
     visit edit_job_path(job)
 
-    fill_in 'Title',       with: 'Dev Mais que Master'
-    fill_in 'Location',    with: 'Recife'
+    fill_in 'Title',       with: job.title
+    fill_in 'Location',    with: job.location
     select  new_company.name
     select  new_category.name
-    fill_in 'Description', with: 'Vaga para Dev Mais que Master para o Quickstart'
+    select  new_contract.name
+    fill_in 'Description', with: job.description
 
     click_on 'Atualizar Vaga'
 
-    expect(page).to have_content 'Dev Mais que Master'
-    expect(page).to have_content 'Recife'
+    expect(page).to have_content job.title
+    expect(page).to have_content job.location
     expect(page).to have_content 'Dev Ninja'
+    expect(page).to have_content job.contract.name
     expect(page).to have_content 'Code Campus'
-    expect(page).to have_content 'Vaga para Dev Mais que Master para o Quickstart'
+    expect(page).to have_content job.description
   end
 
   scenario 'featured job' do
     login_user
-    
+
     company = Company.create(name:     'Campus Code',
                             location: 'São Paulo',
                             mail:     'contato@campuscode.com.br',
@@ -52,29 +52,26 @@ feature 'User creates a new job' do
 
     category = Category.create(name: 'Desenvolvedor')
 
-    job = Job.create(title: 'Vaga de Dev',
-               description: 'Dev Junior Rails com ao menos um projeto',
-               location:    'São Paulo',
-               company:  company,
-               category: category,
-               featured:    false)
+    job = create_job(company,category)
 
     visit edit_job_path(job)
 
-    fill_in 'Title',       with: 'Dev Mais que Master'
-    fill_in 'Location',    with: 'Recife'
+    fill_in 'Title',       with: job.title
+    fill_in 'Location',    with: job.location
     select  'Campus Code'
     select  'Desenvolvedor'
-    fill_in 'Description', with: 'Vaga para Dev Mais que Master para o Quickstart'
+    select  job.contract.name
+    fill_in 'Description', with: job.description
     check   'Featured'
 
     click_on 'Atualizar Vaga'
 
-    expect(page).to have_content 'Dev Mais que Master'
-    expect(page).to have_content 'Recife'
+    expect(page).to have_content job.title
+    expect(page).to have_content job.location
     expect(page).to have_content 'Desenvolvedor'
+    expect(page).to have_content job.contract.name
     expect(page).to have_content 'Campus Code'
-    expect(page).to have_content 'Vaga para Dev Mais que Master para o Quickstart'
+    expect(page).to have_content job.description
     expect(page).to have_content 'Vaga em Destaque'
   end
 

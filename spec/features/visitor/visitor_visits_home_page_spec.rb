@@ -13,6 +13,8 @@ feature 'Visitor visits Emprego Ja home page' do
 
     category = Category.create(name: 'Desenvolvedor')
 
+    job = create_job(company,category)
+    job2 = create_job(company,category)
     Job.create(title: 'Vaga de Dev',
                category: category,
                description: 'Dev Junior Rails com ao menos um projeto',
@@ -27,10 +29,10 @@ feature 'Visitor visits Emprego Ja home page' do
 
     visit root_path
 
-    expect(page).to have_content('Vaga de Dev')
-    expect(page).to have_content('Campus Code')
-    expect(page).to have_content('Desenvolvedor')
-    expect(page).to have_content('São Paulo')
-    expect(page).to have_content('Vaga de QA')
+    expect(page).to have_content(job.title)
+    expect(page).to have_content(job.company.name)
+    expect(page).to have_content(job.category.name)
+    expect(page).to have_content(job.location)
+    expect(page).to have_content(job2.title)
   end
 end

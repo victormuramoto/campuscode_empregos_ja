@@ -9,11 +9,7 @@ feature 'Visitor visits job details' do
 
     category = Category.create(name: 'Desenvolvedor')
 
-    job = Job.create(title: 'Vaga de Dev',
-               category: category,
-               description: 'Dev Junior Rails com ao menos um projeto',
-               location: 'São Paulo',
-               company: company)
+    job = create_job(company,category)
 
     visit root_path
 
@@ -24,5 +20,7 @@ feature 'Visitor visits job details' do
     expect(page).to have_content company.name
     expect(page).to have_content job.description
     expect(page).to have_content job.location
+    expect(page).to have_content job.contract.name
+
   end
 end

@@ -9,11 +9,7 @@ feature 'Visitor choose jobs by company' do
 
     category = Category.create(name: 'Desenvolvedor')
 
-    job = Job.create(title:       'Vaga de Dev',
-                     category:    category,
-                     description: 'Dev Junior Rails com ao menos um projeto',
-                     location:    'São Paulo',
-                     company:  company)
+    job = create_job(company,category)
     visit root_path
 
     click_on company.name
@@ -38,11 +34,7 @@ feature 'Visitor choose jobs by company' do
 
     category = Category.create(name: 'Desenvolvedor')
 
-    job = Job.create(title:       'Vaga de Dev',
-                     category:    category,
-                     description: 'Dev Junior Rails com ao menos um projeto',
-                     location:    'São Paulo',
-                     company:  company)
+    job = create_job(company,category)
 
     visit root_path
 
