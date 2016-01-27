@@ -23,8 +23,7 @@ feature 'visitor visits the home page' do
     expect(page).to have_content('Developer ruby')
     expect(page).to have_content('SP')
     expect(page).to have_content('Locaweb')
-    expect(page).to have_content('Developer')
     expect(page).to have_content('Python')
-    
+
   end
 end
