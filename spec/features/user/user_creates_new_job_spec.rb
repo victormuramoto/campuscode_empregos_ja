@@ -7,7 +7,15 @@ feature 'User creates a new job' do
     company = Company.create(name: 'Campus Code',
                             location: 'São Paulo',
                             mail: 'contato@campus.com.br',
-                            phone: '2369-3476')
+                            phone: '2369-3476',
+                            user: user)
+
+
+   company_2 = Company.create(name: 'Campus Code 2',
+                           location: 'São Paulo',
+                           mail: 'contato@campus.com.br',
+                           phone: '2369-3476',
+                           user: create_user)
 
     category = Category.create(name: 'Desenvolvedor')
 
@@ -23,6 +31,8 @@ feature 'User creates a new job' do
     select company.name,   from: 'Company'
     select contract.name,  from: 'job[contract_id]'
     fill_in 'Description', with: job.description
+
+    expect(page).to_not have_content company_2.name
 
     click_on 'Criar Vaga'
 
@@ -40,7 +50,8 @@ feature 'User creates a new job' do
     company = Company.create(name: 'Campus Code',
                             location: 'São Paulo',
                             mail: 'contato@campus.com.br',
-                            phone: '2369-3476')
+                            phone: '2369-3476',
+                            user: user)
 
     category = Category.create(name: 'Desenvolvedor')
 

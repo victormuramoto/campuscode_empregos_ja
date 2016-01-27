@@ -1,11 +1,13 @@
 require 'securerandom'
 
 module ModelsMacros
-  def create_company
+  def create_company(user = nil)
+    user ||= create_user
     Company.create(name: 'Campus Code',
                    location: 'São Paulo',
                    phone: '11 2369 3476',
-                   mail: 'contato@campuscode.com.br')
+                   mail: 'contato@campuscode.com.br',
+                   user: user)
   end
 
   def create_category
@@ -27,14 +29,17 @@ module ModelsMacros
                contract: contract)
   end
 
-  def login_user
-    user = User.create(email: 'allan@a.com.br', password:'12345678')
+  def create_user
+    User.create(email: 'allan@a.com.br', password:'12345678')
+  end
 
+  def login_user(user = nil)
+    user ||= create_user
 
     visit new_user_session_path
 
-    fill_in 'user[email]',     with: 'allan@a.com.br'
-    fill_in 'user[password]',     with: '12345678'
+    fill_in 'user[email]',     with: user.email
+    fill_in 'user[password]',  with: user.password
 
     click_on 'Log in'
 

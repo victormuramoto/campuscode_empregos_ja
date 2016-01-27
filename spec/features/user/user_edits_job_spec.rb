@@ -8,12 +8,14 @@ feature 'User creates a new job' do
     company = Company.create(name:    'Campus Code',
                             location: 'São Paulo',
                             mail:     'contato@campuscode.com.br',
-                            phone:    '2369-3476')
+                            phone:    '2369-3476',
+                            user: user)
 
     new_company = Company.create(name:     'Code Campus',
                                  location: 'Refice',
                                  mail:     'contato@codecampus.com.br',
-                                 phone:    '1111-5555')
+                                 phone:    '1111-5555',
+                                 user: user)
 
     category = Category.create(name: 'Desenvolvedor')
 
@@ -48,7 +50,8 @@ feature 'User creates a new job' do
     company = Company.create(name:     'Campus Code',
                             location: 'São Paulo',
                             mail:     'contato@campuscode.com.br',
-                            phone:    '2369-3476')
+                            phone:    '2369-3476',
+                            user: user)
 
     category = Category.create(name: 'Desenvolvedor')
 

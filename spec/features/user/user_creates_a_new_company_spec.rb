@@ -7,7 +7,8 @@ feature 'User creates a new company' do
     company = Company.new(name:     'Campus Code',
                           location: 'São Paulo',
                           mail:     'contato@campuscode.com.br',
-                          phone:    '2369-3476')
+                          phone:    '2369-3476',
+                          user:     user)
 
     visit new_company_path
 
