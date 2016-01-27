@@ -1,0 +1,26 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/home/victor/workspace/campuscode/exercises/emprego-ja/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/home/victor/workspace/campuscode/exercises/emprego-ja/app/controllers/home_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/home/victor/workspace/campuscode/exercises/emprego-ja/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null
+      ]
+    },
+    "timestamp": 1453894053
+  }
+}
