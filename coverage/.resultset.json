@@ -5,11 +5,15 @@
         1,
         null
       ],
+      "/home/victor/workspace/campuscode/exercises/emprego-ja/app/models/job.rb": [
+        1,
+        null
+      ],
       "/home/victor/workspace/campuscode/exercises/emprego-ja/app/controllers/home_controller.rb": [
         1,
         null,
         1,
-        2,
+        3,
         null,
         null,
         null
@@ -21,11 +25,16 @@
         1,
         null
       ],
-      "/home/victor/workspace/campuscode/exercises/emprego-ja/app/models/job.rb": [
+      "/home/victor/workspace/campuscode/exercises/emprego-ja/app/controllers/jobs_controller.rb": [
         1,
+        null,
+        1,
+        1,
+        null,
+        null,
         null
       ]
     },
-    "timestamp": 1453895181
+    "timestamp": 1453896132
   }
 }
