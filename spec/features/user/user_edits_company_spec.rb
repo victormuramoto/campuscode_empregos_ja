@@ -33,9 +33,10 @@ feature 'User edits a company' do
                              phone:    '2369-3476',
                              mail:     'contato@campuscode.com.br',
                              user: create_user)
-    if user == company.user
-      visit edit_company_path(company)
 
+    visit edit_company_path(company)
+
+    if user == company.user
       fill_in 'Name',     with: 'Code Campus'
       fill_in 'Location', with: 'Recife'
       fill_in 'Mail',     with: 'contat@codecampus.com.br'
@@ -48,8 +49,8 @@ feature 'User edits a company' do
       expect(page).to have_content 'contat@codecampus.com.br'
       expect(page).to have_content '1111-5555'
     else
-      visit root_path
       expect(page).to have_content "Warning: Your user can't edit a company that don't belong to you"
     end
+    
   end
 end

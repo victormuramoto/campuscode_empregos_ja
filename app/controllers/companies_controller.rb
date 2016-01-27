@@ -1,6 +1,7 @@
 class CompaniesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
   before_action :set_company, only: [:edit, :update, :show]
+  before_action :user_owner, only: [:edit, :update]
 
   def new
     @company = Company.new
@@ -35,6 +36,13 @@ class CompaniesController < ApplicationController
 
   def set_company
     @company = Company.find(params[:id])
+  end
+
+  def user_owner
+    if current_user != @company.user
+      flash[:warning] = "Warning: Your user can't edit a company that don't belong to you"
+      redirect_to root_path
+    end
   end
 
   def company_params

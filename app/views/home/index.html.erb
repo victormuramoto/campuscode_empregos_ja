@@ -1,3 +1,4 @@
+<span class="error_message"><%= flash[:warning] %></span>
 <section id="jobs">
   <% @jobs.each do |job| %>
     <% if !job.expired? %>
