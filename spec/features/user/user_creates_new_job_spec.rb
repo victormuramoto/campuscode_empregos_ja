@@ -11,7 +11,9 @@ feature 'User creates a new job' do
 
     category = Category.create(name: 'Desenvolvedor')
 
-    job = create_job(company,category)
+    contract = Contract.create(name: 'CLT')
+
+    job = create_job(company, category, contract)
 
     visit new_job_path
 
@@ -19,7 +21,7 @@ feature 'User creates a new job' do
     fill_in 'Location',    with: job.location
     select category.name,  from: 'Category'
     select company.name,   from: 'Company'
-    select contract.name,  from: job.contract.name
+    select contract.name,  from: 'job[contract_id]'
     fill_in 'Description', with: job.description
 
     click_on 'Criar Vaga'

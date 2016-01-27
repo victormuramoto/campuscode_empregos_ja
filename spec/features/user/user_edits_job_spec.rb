@@ -21,7 +21,7 @@ feature 'User creates a new job' do
 
     new_contract = Category.create(name: 'PJ')
 
-    job = create_job(company,category)
+    job = create_job(company, category)
 
     visit edit_job_path(job)
 
@@ -36,7 +36,7 @@ feature 'User creates a new job' do
 
     expect(page).to have_content job.title
     expect(page).to have_content job.location
-    expect(page).to have_content 'Dev Ninja'
+    expect(page).to have_content job.category.name
     expect(page).to have_content job.contract.name
     expect(page).to have_content 'Code Campus'
     expect(page).to have_content job.description

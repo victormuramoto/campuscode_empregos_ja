@@ -3,6 +3,7 @@
 <% @category.jobs.each do |job| %>
   <p><%= job.title %></p>
   <p><%= job.location %></p>
+  <p><%= job.contract.name %></p>
   <p><%= job.category %></p>
   <p><%= job.description %></p>
 <% end %>
