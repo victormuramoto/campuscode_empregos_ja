@@ -11,7 +11,7 @@ feature 'User access his dashboard' do
     job_1 = create_job(company,category_1)
     job_2 = create_job(company,category_1)
 
-    visit users_path
+    visit dashboard_index_path
 
     expect(page).to have_content job_1.title
     expect(page).to have_content job_1.location
@@ -28,7 +28,7 @@ feature 'User access his dashboard' do
   end
 
   scenario 'unsuccessfully' do
-    visit users_path
+    visit dashboard_index_path
 
     expect(page).to have_content "Log in"
 
@@ -43,7 +43,7 @@ feature 'User access his dashboard' do
 
     job_1 = create_job(company,category_1)
 
-    visit users_path
+    visit dashboard_index_path
 
     expect(page).to_not have_content job_1.title
     expect(page).to_not have_content job_1.location

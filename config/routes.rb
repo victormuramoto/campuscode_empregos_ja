@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :companies, only: [:new, :create, :show, :edit, :update]
   resources :categories, only: [:new, :create, :show]
   resources :contracts, only: [:show]
+  resources :dashboard, only: [:index]
 end
