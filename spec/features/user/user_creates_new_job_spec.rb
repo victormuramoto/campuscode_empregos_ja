@@ -45,7 +45,7 @@ feature 'User creates a new job' do
   end
 
   scenario 'featured job' do
-    login_user
+    user = login_user
 
     company = Company.create(name: 'Campus Code',
                             location: 'São Paulo',

@@ -35,7 +35,7 @@ class JobsController < ApplicationController
 
   def set_collections
     @categories = Category.all
-    @companies = Company.all
+    @companies = current_user.companies
     @contracts = Contract.all
   end
 
