@@ -10,8 +10,8 @@ module ModelsMacros
                    user: user)
   end
 
-  def create_category
-    Category.create(name: 'Desenvolvedor')
+  def create_category(attrs = {})
+    Category.create({name: 'Desenvolvedor'}.merge(attrs))
   end
 
   def create_contract(attrs = {})
