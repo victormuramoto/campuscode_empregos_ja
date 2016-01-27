@@ -78,5 +78,21 @@ feature 'User edit a job' do
     expect(page).to have_content 'Vaga em Destaque'
   end
 
+  scenario "User trying to edit jobs of other users" do
+    user = login_user
+
+    company = Company.create(name:    'Campus Code',
+                            location: 'São Paulo',
+                            mail:     'contato@campuscode.com.br',
+                            phone:    '2369-3476',
+                            user: create_user)
+
+    job = create_job(company)
+
+    visit edit_job_path(job)
+
+    expect(page).to have_content "Warning: Your user can't edit a job that don't belong to you"
+  end
+
 
 end

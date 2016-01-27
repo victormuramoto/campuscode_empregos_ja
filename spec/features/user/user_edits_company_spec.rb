@@ -36,21 +36,7 @@ feature 'User edits a company' do
 
     visit edit_company_path(company)
 
-    if user == company.user
-      fill_in 'Name',     with: 'Code Campus'
-      fill_in 'Location', with: 'Recife'
-      fill_in 'Mail',     with: 'contat@codecampus.com.br'
-      fill_in 'Phone',    with: '1111-5555'
+    expect(page).to have_content "Warning: Your user can't edit a company that don't belong to you"
 
-      click_on 'Atualizar Empresa'
-
-      expect(page).to have_content 'Code Campus'
-      expect(page).to have_content 'Recife'
-      expect(page).to have_content 'contat@codecampus.com.br'
-      expect(page).to have_content '1111-5555'
-    else
-      expect(page).to have_content "Warning: Your user can't edit a company that don't belong to you"
-    end
-    
   end
 end
