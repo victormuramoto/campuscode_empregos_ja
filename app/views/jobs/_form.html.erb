@@ -9,6 +9,8 @@
 <%= f.text_field :category %>
 <%= f.label :description, 'Descrição' %>
 <%= f.text_area :description %>
+<%= f.check_box :featured %>
+<%= f.label :featured, 'Destaque' %>
 
 <%= f.submit button_label %>
 <% end %>
