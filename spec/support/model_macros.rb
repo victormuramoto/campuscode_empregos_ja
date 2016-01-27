@@ -1,3 +1,5 @@
+require 'securerandom'
+
 module ModelsMacros
   def create_company
     Company.create(name: 'Campus Code',
@@ -10,12 +12,16 @@ module ModelsMacros
     Category.create(name: 'Desenvolvedor')
   end
 
+  def create_contract(attrs = {})
+    Contract.create({ name: 'CLT' }.merge(attrs))
+  end
+
   def create_job(company = nil, category = nil, contract = nil)
     company ||= create_company
     category ||= create_category
-    contract ||= Contract.create(name: 'CLT')
-    company.jobs.create(title: 'Desenvolvedor Rails',
-               description: 'Desenvolvedor Full Stack Rails',
+    contract ||= create_contract
+    company.jobs.create(title: "Desenvolvedor Rails #{SecureRandom.hex}",
+               description: "Desenvolvedor Full Stack Rails #{SecureRandom.hex}",
                location: 'São Paulo - SP',
                category: category,
                contract: contract)
