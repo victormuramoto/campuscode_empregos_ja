@@ -1,8 +1,8 @@
 class JobsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
-
   before_action :set_collections, only: [:new, :create, :edit, :update]
   before_action :set_job, only: [:edit, :show, :update]
+  before_action :user_owner, only: [:edit,:update]
 
   def show
   end
@@ -41,6 +41,13 @@ class JobsController < ApplicationController
 
   def set_job
     @job = Job.find(params[:id])
+  end
+
+  def user_owner
+    if current_user != @job.company.user
+      flash[:warning] = "Warning: Your user can't edit a job that don't belong to you"
+      redirect_to root_path
+    end
   end
 
   def job_params
