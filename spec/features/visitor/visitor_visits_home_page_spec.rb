@@ -13,8 +13,8 @@ feature 'Visitor visits Emprego Ja home page' do
 
     category = Category.create(name: 'Desenvolvedor')
 
-    job = create_job(company,category)
-    job2 = create_job(company,category)
+    job = create_job(company, {category: category})
+    job2 = create_job(company, {category: category})
     Job.create(title: 'Vaga de Dev',
                category: category,
                description: 'Dev Junior Rails com ao menos um projeto',

@@ -9,7 +9,7 @@ feature 'Visitor visits job details' do
 
     category = Category.create(name: 'Desenvolvedor')
 
-    job = create_job(company,category)
+    job = create_job(company, {category: category})
 
     visit root_path
 

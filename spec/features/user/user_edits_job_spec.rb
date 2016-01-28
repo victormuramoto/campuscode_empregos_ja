@@ -23,7 +23,7 @@ feature 'User edit a job' do
 
     new_contract = Category.create(name: 'PJ')
 
-    job = create_job(company, category)
+    job = create_job(company, {category: category})
 
     visit edit_job_path(job)
 
@@ -55,7 +55,7 @@ feature 'User edit a job' do
 
     category = Category.create(name: 'Desenvolvedor')
 
-    job = create_job(company,category)
+    job = create_job(company, {category: category})
 
     visit edit_job_path(job)
 

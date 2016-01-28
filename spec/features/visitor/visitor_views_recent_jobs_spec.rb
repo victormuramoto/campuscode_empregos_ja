@@ -8,7 +8,7 @@ feature 'Visitor view recent jobs' do
                              phone:    '2369-3476')
 
     category = Category.create(name: 'Desenvolvedor')
-    job = create_job(company,category)
+    job = create_job(company, {category: category})
 
     visit root_path
 

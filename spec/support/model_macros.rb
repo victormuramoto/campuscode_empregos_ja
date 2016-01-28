@@ -17,15 +17,13 @@ module ModelsMacros
     Contract.create({name: 'CLT'}.merge(attrs))
   end
 
-  def create_job(company = nil, category = nil, contract = nil)
+  def create_job(company = nil, attrs = {})
     company ||= create_company
-    category ||= create_category
-    contract ||= create_contract
-    company.jobs.create(title: "Desenvolvedor Rails #{SecureRandom.hex}",
+    attrs[:category] ||= create_category
+    attrs[:contract] ||= create_contract
+    company.jobs.create({title: "Desenvolvedor Rails #{SecureRandom.hex}",
                description: "Desenvolvedor Full Stack Rails #{SecureRandom.hex}",
-               location: 'São Paulo - SP',
-               category: category,
-               contract: contract)
+               location: 'São Paulo - SP'}.merge(attrs))
   end
 
   def create_user

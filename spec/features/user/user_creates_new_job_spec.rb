@@ -21,7 +21,7 @@ feature 'User creates a new job' do
 
     contract = Contract.create(name: 'CLT')
 
-    job = create_job(company, category, contract)
+    job = create_job(company, {category: category, contract: contract})
 
     visit new_job_path
 
@@ -55,7 +55,7 @@ feature 'User creates a new job' do
 
     category = Category.create(name: 'Desenvolvedor')
 
-    job = create_job(company,category)
+    job = create_job(company, {category: category})
 
     visit new_job_path
     fill_in 'Title',       with: job.title

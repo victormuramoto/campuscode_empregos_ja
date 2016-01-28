@@ -8,8 +8,8 @@ feature 'User access his dashboard' do
     category_1 = create_category(name:'Suporte')
     category_2 = create_category(name:'Infra')
 
-    job_1 = create_job(company,category_1)
-    job_2 = create_job(company,category_1)
+    job_1 = create_job(company,{category: category_1})
+    job_2 = create_job(company,{category: category_1})
 
     visit dashboard_index_path
 
@@ -41,7 +41,7 @@ feature 'User access his dashboard' do
     category_1 = create_category(name:'Suporte')
     category_2 = create_category(name:'Infra')
 
-    job_1 = create_job(company,category_1)
+    job_1 = create_job(company, {category: category_1})
 
     visit dashboard_index_path
 

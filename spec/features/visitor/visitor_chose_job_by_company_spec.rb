@@ -9,7 +9,7 @@ feature 'Visitor choose jobs by company' do
 
     category = Category.create(name: 'Desenvolvedor')
 
-    job = create_job(company,category)
+    job = create_job(company, {category: category})
     visit root_path
 
     click_on company.name
@@ -34,7 +34,7 @@ feature 'Visitor choose jobs by company' do
 
     category = Category.create(name: 'Desenvolvedor')
 
-    job = create_job(company,category)
+    job = create_job(company, {category: category})
 
     visit root_path
 

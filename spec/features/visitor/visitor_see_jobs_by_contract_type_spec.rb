@@ -19,8 +19,8 @@ feature 'Visitor see jobs by contract type' do
     contract_1 = create_contract
     contract_2 = create_contract({name: 'PJ'})
 
-    job_1 = create_job(nil,nil,contract_1)
-    job_2 = create_job(nil,nil,contract_2)
+    job_1 = create_job(nil, {contract: contract_1})
+    job_2 = create_job(nil, {contract: contract_2})
 
     visit root_path
 
