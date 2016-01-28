@@ -2,14 +2,12 @@ module ModelsMacros
   def create_job(attrs = {})
     Job.create({title:'Developer ruby',
               location:'SP',
-              category:'Developer',
               description:'teste'}.merge(attrs))
   end
 
   def new_job(attrs= {})
     Job.new({title:'Developer ruby',
              location:'SP',
-             category:'Developer',
              description:'teste'}.merge(attrs))
   end
 

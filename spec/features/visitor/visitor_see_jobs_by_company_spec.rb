@@ -13,17 +13,16 @@ feature 'visitor see job by company' do
   end
 
   scenario 'visitor see list of jobs available by company' do
-
     company1 = create_company(name:'Locaweb')
     company2 = create_company(name:'Campus Code')
 
     job1 = create_job(title:'Dev C#',company: company1)
-    job2 = create_job(title:'Dev Python',company: company1)
-    job3 = create_job(title:'Dev Haskell',company: company1)
+    job2 = create_job(title:'Dev Python',company:company1)
+    job3 = create_job(title:'Dev Haskell',company:company1)
 
-    job4 = create_job(title:'Dev Java',company: company2)
-    job5 = create_job(title:'Dev C++',company: company2)
-    job6 = create_job(title:'Dev Ruby',company: company2)
+    job4 = create_job(title:'Dev Java',company:  company2)
+    job5 = create_job(title:'Dev C++',company:  company2)
+    job6 = create_job(title:'Dev Ruby',company:  company2)
 
 
     visit root_path
@@ -46,5 +45,5 @@ feature 'visitor see job by company' do
 
   end
 
-  
+
 end
