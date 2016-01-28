@@ -8,12 +8,11 @@ feature 'User edit a job' do
     company = create_company(user: user, name: 'Campus Code', location: 'São Paulo')
     new_company = create_company(user: user, name: 'Locaweb', location: 'Recife')
 
-    category = create_category(name: 'Desenvolvedor')
     new_category = create_category(name: 'Dev Ninja')
 
     new_contract = create_contract(name: 'PJ')
 
-    job = create_job(company, {category: category})
+    job = create_job(company)
 
     visit edit_job_path(job)
 
@@ -39,16 +38,14 @@ feature 'User edit a job' do
 
     company = create_company(user: user)
 
-    category = create_category
-
-    job = create_job(company, {category: category})
+    job = create_job(company)
 
     visit edit_job_path(job)
 
     fill_in 'job[title]',       with: job.title
     fill_in 'job[location]',    with: job.location
-    select  company.name,      from: 'job[company_id]'
-    select  category.name,    from: 'job[category_id]'
+    select  job.company.name,      from: 'job[company_id]'
+    select  job.category.name,    from: 'job[category_id]'
     select  job.contract.name,  from: 'job[contract_id]'
     fill_in 'job[description]', with: job.description
     check   'job[featured]'
@@ -68,13 +65,11 @@ feature 'User edit a job' do
     user = login_user
 
     company = create_company
-
     job = create_job(company)
 
     visit edit_job_path(job)
 
     expect(page).to have_content "Warning: Your user can't edit a job that don't belong to you"
   end
-
 
 end
