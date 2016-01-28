@@ -1,13 +1,12 @@
 require 'securerandom'
 
 module ModelsMacros
-  def create_company(user = nil)
-    user ||= create_user
-    Company.create(name: 'Campus Code',
+  def create_company(attrs = {})
+    attrs[:user] ||= create_user
+    Company.create({name: 'Campus Code',
                    location: 'São Paulo',
                    phone: '11 2369 3476',
-                   mail: 'contato@campuscode.com.br',
-                   user: user)
+                   mail: 'contato@campuscode.com.br'}.merge(attrs))
   end
 
   def create_category(attrs = {})
@@ -15,7 +14,7 @@ module ModelsMacros
   end
 
   def create_contract(attrs = {})
-    Contract.create({ name: 'CLT' }.merge(attrs))
+    Contract.create({name: 'CLT'}.merge(attrs))
   end
 
   def create_job(company = nil, category = nil, contract = nil)

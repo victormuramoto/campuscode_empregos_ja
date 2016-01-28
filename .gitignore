@@ -16,6 +16,7 @@
 !/log/.keep
 /tmp
 /coverage
+.byebug_history
 
 # OSX
 .DS_Store

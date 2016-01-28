@@ -4,7 +4,7 @@ feature 'User access his dashboard' do
   scenario 'successfully' do
     user = login_user
 
-    company = create_company(user)
+    company = create_company({user: user})
     category_1 = create_category(name:'Suporte')
     category_2 = create_category(name:'Infra')
 
@@ -37,7 +37,7 @@ feature 'User access his dashboard' do
   scenario "User can't see data of other users" do
     user = login_user
 
-    company = create_company(create_user)
+    company = create_company
     category_1 = create_category(name:'Suporte')
     category_2 = create_category(name:'Infra')
 
