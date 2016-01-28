@@ -2,13 +2,9 @@ require 'rails_helper'
 
 feature 'Visitor chooses jobs by category' do
   scenario 'successfully' do
-    company = Company.create(name:     'Campus Code',
-                             location: 'São Paulo',
-                             mail:     'contato@campuscode.com.br',
-                             phone:    '2369-3476')
+    company = create_company
 
-    category = Category.create(name: 'Desenvolvedor')
-
+    category = create_category
 
     job = create_job(company, {category: category})
     job_2 = create_job(company, {category: category})
@@ -30,26 +26,20 @@ feature 'Visitor chooses jobs by category' do
     expect(page).to have_content job_2.description
     expect(page).to have_content job_2.location
     expect(page).to have_content job_2.contract.name
-
   end
 
   scenario 'and does not see other category jobs' do
-    company = Company.create(name:     'Campus Code',
-                             location: 'São Paulo',
-                             mail:     'contato@campuscode.com.br',
-                             phone:    '2369-3476')
+    company = create_company
 
-    category = Category.create(name: 'Desenvolvedor')
+    category = create_category(name: 'Designer')
 
-    category_2 = Category.create(name: 'Designer')
-
-    job = create_job(company, {category: category})
+    job = create_job(company, {category: create_category})
 
     visit root_path
 
-    click_on category_2.name
+    click_on category.name
 
-    expect(page).to have_content category_2.name
+    expect(page).to have_content category.name
 
     expect(page).not_to have_content job.title
     expect(page).not_to have_content job.category.name
