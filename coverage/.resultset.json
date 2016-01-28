@@ -10,21 +10,21 @@
         1,
         null
       ],
-      "/home/victor/workspace/campuscode/exercises/emprego-ja/app/controllers/jobs_controller.rb": [
+      "/home/victor/workspace/campuscode/exercises/emprego-ja/app/controllers/companies_controller.rb": [
         1,
         null,
         1,
-        3,
+        1,
         null,
         null,
         1,
-        3,
+        1,
         null,
         null,
         1,
-        2,
-        2,
-        2,
+        1,
+        1,
+        1,
         null,
         0,
         null,
@@ -33,7 +33,8 @@
         1,
         null,
         1,
-        2,
+        1,
+        null,
         null,
         null,
         null
@@ -50,6 +51,33 @@
         1,
         null
       ],
+      "/home/victor/workspace/campuscode/exercises/emprego-ja/app/controllers/jobs_controller.rb": [
+        1,
+        null,
+        1,
+        3,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        2,
+        2,
+        2,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        2,
+        null,
+        null
+      ],
       "/home/victor/workspace/campuscode/exercises/emprego-ja/app/controllers/home_controller.rb": [
         1,
         null,
@@ -60,6 +88,6 @@
         null
       ]
     },
-    "timestamp": 1453947131
+    "timestamp": 1453948508
   }
 }

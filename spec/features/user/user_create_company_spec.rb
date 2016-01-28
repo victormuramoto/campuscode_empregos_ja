@@ -4,10 +4,10 @@ feature 'user create a company' do
   scenario 'success' do
     company = new_company
 
-    visit new_job_path
+    visit new_company_path
 
     fill_in 'Nome',        with: company.name
-    fill_in 'Location',    with: company.location
+    fill_in 'Localização',    with: company.location
     fill_in 'Email',       with: company.email
     fill_in 'Telefone',    with: company.phone
 
