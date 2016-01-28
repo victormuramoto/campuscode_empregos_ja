@@ -4,35 +4,29 @@ feature 'User edits a company' do
   scenario 'successfully' do
     user = login_user
 
-    company = Company.create(name:     'Campus Code',
-                             location: 'São Paulo',
-                             phone:    '2369-3476',
-                             mail:     'contato@campuscode.com.br',
-                             user: user)
+    company = create_company(user: user)
 
     visit edit_company_path(company)
 
-    fill_in 'Name',     with: 'Code Campus'
-    fill_in 'Location', with: 'Recife'
-    fill_in 'Mail',     with: 'contat@codecampus.com.br'
-    fill_in 'Phone',    with: '1111-5555'
+    fill_in 'company[name]',     with: 'Code Campus'
+    fill_in 'company[location]', with: 'Recife'
+    fill_in 'company[mail]',     with: 'contat@codecampus.com.br'
+    fill_in 'company[phone]',    with: '1111-5555'
 
-    click_on 'Atualizar Empresa'
+    click_on 'submit'
 
-    expect(page).to have_content 'Code Campus'
-    expect(page).to have_content 'Recife'
-    expect(page).to have_content 'contat@codecampus.com.br'
-    expect(page).to have_content '1111-5555'
+    edited_company = find_company(company.id)
+
+    expect(page).to have_content edited_company.name
+    expect(page).to have_content edited_company.location
+    expect(page).to have_content edited_company.mail
+    expect(page).to have_content edited_company.phone
   end
 
   scenario 'unsuccessfully' do
     user = login_user
 
-    company = Company.create(name:     'Campus Code',
-                             location: 'São Paulo',
-                             phone:    '2369-3476',
-                             mail:     'contato@campuscode.com.br',
-                             user: create_user)
+    company = create_company
 
     visit edit_company_path(company)
 

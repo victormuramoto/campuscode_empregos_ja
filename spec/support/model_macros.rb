@@ -9,6 +9,10 @@ module ModelsMacros
                    mail: 'contato@campuscode.com.br'}.merge(attrs))
   end
 
+  def find_company(attrs = {})
+    Company.find(attrs)
+  end
+
   def create_category(attrs = {})
     Category.create({name: 'Desenvolvedor'}.merge(attrs))
   end
