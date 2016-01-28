@@ -2,14 +2,9 @@ require 'rails_helper'
 
 feature 'Visitor choose jobs by company' do
   scenario 'successfully' do
-    company = Company.create(name:     'Campus Code',
-                             location: 'São Paulo',
-                             mail:     'contato@campuscode.com.br',
-                             phone:    '2369-3476')
+    company = create_company
 
-    category = Category.create(name: 'Desenvolvedor')
-
-    job = create_job(company, {category: category})
+    job = create_job(company)
     visit root_path
 
     click_on company.name
@@ -22,19 +17,10 @@ feature 'Visitor choose jobs by company' do
   end
 
   scenario 'and does not see other company jobs' do
-    company = Company.create(name:     'Campus Code',
-                             location: 'São Paulo',
-                             mail:     'contato@campuscode.com.br',
-                             phone:    '2369-3476')
+    company = create_company
+    company_2 = create_company(name: 'Locaweb')
 
-    company_2 = Company.create(name:     'Another Company',
-                               location: 'Another City',
-                               mail:     'contato@company.com.br',
-                               phone:    '1111-2222')
-
-    category = Category.create(name: 'Desenvolvedor')
-
-    job = create_job(company, {category: category})
+    job = create_job(company)
 
     visit root_path
 
