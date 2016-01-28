@@ -43,6 +43,14 @@ feature 'user create a job' do
     expect(page).to have_content(job.company.name)
     expect(page).to have_content(job.category)
     expect(page).to have_content(job.description)
+  end
+
+  scenario "field can't be blank" do
+    visit new_job_path
+
+    click_on 'Criar Vaga'
+
+    expect(page).to have_content "Warning: The fields can't be blank"
 
 
   end
