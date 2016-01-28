@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'visitor can see job details' do
-  scenario 'successfully' do
+  scenario 'success' do
   job = create_job(company:create_company)
   visit root_path
 

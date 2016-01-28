@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'user create a job' do
-  scenario 'successfully' do
+  scenario 'success' do
     company = create_company
     job = new_job(company: company)
 

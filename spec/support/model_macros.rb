@@ -13,7 +13,15 @@ module ModelsMacros
                   email:'rh@locaweb.com.br',
                   phone:'1212-1212')
   end
-  
+
+  def new_company
+    Company.new(name:'Locaweb',
+                  location:'SP',
+                  email:'rh@locaweb.com.br',
+                  phone:'1212-1212')
+  end
+
+
   def new_job(attrs= {})
     Job.new({title:'Developer ruby',
              location:'SP',
