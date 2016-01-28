@@ -5,27 +5,12 @@ feature 'Visitor visits Emprego Ja home page' do
     visit root_path
     expect(page).to have_content('Emprego Já')
   end
+
   scenario 'and see jobs' do
-    company = Company.create(name: 'Campus Code',
-                            location: 'São Paulo',
-                            mail: 'contato@campus.com.br',
-                            phone: '2369-3476')
+    company = create_company
 
-    category = Category.create(name: 'Desenvolvedor')
-
-    job = create_job(company, {category: category})
-    job2 = create_job(company, {category: category})
-    Job.create(title: 'Vaga de Dev',
-               category: category,
-               description: 'Dev Junior Rails com ao menos um projeto',
-               company: company,
-               location: 'São Paulo')
-
-    Job.create(title: 'Vaga de QA',
-               category: category,
-               company: company,
-               description: 'QA Junior com ao menos um projeto',
-               location: 'São Paulo')
+    job = create_job(company, {title: 'Vaga de Dev', description: 'Dev Junior Rails com ao menos um projeto',})
+    job2 = create_job(company, {title: 'Vaga de QA', description: 'QA Junior com ao menos um projeto'})
 
     visit root_path
 
