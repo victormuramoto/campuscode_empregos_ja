@@ -3,5 +3,5 @@
 <% @jobs.each do |job| %>
   Título: <%= job.title %>
   Localização: <%= job.location %>
-  Empresa: <%= job.company %>
+  Empresa: <%= job.company.name %>
 <% end %>
