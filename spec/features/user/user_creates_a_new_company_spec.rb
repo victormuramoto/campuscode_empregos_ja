@@ -4,20 +4,16 @@ feature 'User creates a new company' do
 
   scenario 'successfully' do
     user = login_user
-    company = Company.new(name:     'Campus Code',
-                          location: 'São Paulo',
-                          mail:     'contato@campuscode.com.br',
-                          phone:    '2369-3476',
-                          user:     user)
+    company = create_company(user:user)
 
     visit new_company_path
 
-    fill_in 'Name',     with: company.name
-    fill_in 'Location', with: company.location
-    fill_in 'Mail',     with: company.mail
-    fill_in 'Phone',    with: company.phone
+    fill_in 'company[name]',     with: company.name
+    fill_in 'company[location]', with: company.location
+    fill_in 'company[mail]',     with: company.mail
+    fill_in 'company[phone]',    with: company.phone
 
-    click_on 'Criar Empresa'
+    click_on 'submit'
 
     expect(page).to have_content company.name
     expect(page).to have_content company.location
@@ -28,7 +24,7 @@ feature 'User creates a new company' do
   scenario 'invalid' do
     user = login_user
     visit new_company_path
-    click_on 'Criar Empresa'
+    click_on 'submit'
 
     expect(page).to have_content "Warning! All fields are mandatory."
   end
