@@ -4,37 +4,23 @@ feature 'User creates a new job' do
   scenario 'successfully' do
    user = login_user
 
-    company = Company.create(name: 'Campus Code',
-                            location: 'São Paulo',
-                            mail: 'contato@campus.com.br',
-                            phone: '2369-3476',
-                            user: user)
+    company = create_company(user: user)
+    company_2 = create_company(name: 'Locaweb')
 
-
-   company_2 = Company.create(name: 'Campus Code 2',
-                           location: 'São Paulo',
-                           mail: 'contato@campus.com.br',
-                           phone: '2369-3476',
-                           user: create_user)
-
-    category = Category.create(name: 'Desenvolvedor')
-
-    contract = Contract.create(name: 'CLT')
-
-    job = create_job(company, {category: category, contract: contract})
+    job = create_job(company)
 
     visit new_job_path
 
-    fill_in 'Title',       with: job.title
-    fill_in 'Location',    with: job.location
-    select category.name,  from: 'Category'
-    select company.name,   from: 'Company'
-    select contract.name,  from: 'job[contract_id]'
-    fill_in 'Description', with: job.description
+    fill_in 'job[title]',       with: job.title
+    fill_in 'job[location]',    with: job.location
+    select job.category.name,  from: 'job[category_id]'
+    select company.name,   from: 'job[company_id]'
+    select job.contract.name,  from: 'job[contract_id]'
+    fill_in 'job[description]', with: job.description
 
     expect(page).to_not have_content company_2.name
 
-    click_on 'Criar Vaga'
+    click_on 'submit'
 
     expect(page).to have_content job.title
     expect(page).to have_content job.location
@@ -47,25 +33,18 @@ feature 'User creates a new job' do
   scenario 'featured job' do
     user = login_user
 
-    company = Company.create(name: 'Campus Code',
-                            location: 'São Paulo',
-                            mail: 'contato@campus.com.br',
-                            phone: '2369-3476',
-                            user: user)
-
-    category = Category.create(name: 'Desenvolvedor')
-
-    job = create_job(company, {category: category})
+    company = create_company(user: user)
+    job = create_job(company)
 
     visit new_job_path
-    fill_in 'Title',       with: job.title
-    fill_in 'Location',    with: job.location
-    select category.name,  from: 'Category'
-    select company.name,   from: 'Company'
-    fill_in 'Description', with: job.description
-    check   'Featured'
+    fill_in 'job[title]',       with: job.title
+    fill_in 'job[location]',    with: job.location
+    select job.category.name,   from: 'job[category_id]'
+    select company.name,        from: 'job[company_id]'
+    fill_in 'job[description]', with: job.description
+    check   'job[featured]'
 
-    click_on 'Criar Vaga'
+    click_on 'submit'
 
     expect(page).to have_content job.title
     expect(page).to have_content job.location
@@ -79,7 +58,7 @@ feature 'User creates a new job' do
     login_user
     visit new_job_path
 
-    click_on 'Criar Vaga'
+    click_on 'submit'
 
     ['Title', 'Category', 'Description', 'Location'].each do |field|
       expect(page).to have_content "#{field} can\'t be blank"
