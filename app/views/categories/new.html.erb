@@ -1,6 +1,1 @@
-<span class="error_message"><%= flash[:warning] %></span>
-<%= form_for @category do |f| %>
-  <%= f.label :name  %>
-  <%= f.text_field :name  %>
-  <%= f.submit 'Criar Categoria' %>
-<% end %>
+<%= render partial: 'form', locals: {submit_text: 'Criar Categoria'}  %>

@@ -4,12 +4,12 @@ feature 'User creates a new category' do
 
   scenario 'successfully' do
     user = login_user
-    category = Category.new(name: 'Desenvolvedor')
+    category = create_category
 
     visit new_category_path
 
-    fill_in 'Name',     with: category.name
-    click_on 'Criar Categoria'
+    fill_in 'category[name]',     with: category.name
+    click_on 'submit'
 
     expect(page).to have_content category.name
   end
@@ -17,7 +17,7 @@ feature 'User creates a new category' do
   scenario 'invalid' do
     user = login_user
     visit new_category_path
-    click_on 'Criar Categoria'
+    click_on 'submit'
 
     expect(page).to have_content "Warning! All fields are mandatory."
   end
