@@ -5,75 +5,61 @@ feature 'User edit a job' do
   scenario 'successfully' do
     user = login_user
 
-    company = Company.create(name:    'Campus Code',
-                            location: 'São Paulo',
-                            mail:     'contato@campuscode.com.br',
-                            phone:    '2369-3476',
-                            user: user)
+    company = create_company(user: user, name: 'Campus Code', location: 'São Paulo')
+    new_company = create_company(user: user, name: 'Locaweb', location: 'Recife')
 
-    new_company = Company.create(name:     'Code Campus',
-                                 location: 'Refice',
-                                 mail:     'contato@codecampus.com.br',
-                                 phone:    '1111-5555',
-                                 user: user)
+    category = create_category(name: 'Desenvolvedor')
+    new_category = create_category(name: 'Dev Ninja')
 
-    category = Category.create(name: 'Desenvolvedor')
-
-    new_category = Category.create(name: 'Dev Ninja')
-
-    new_contract = Category.create(name: 'PJ')
+    new_contract = create_contract(name: 'PJ')
 
     job = create_job(company, {category: category})
 
     visit edit_job_path(job)
 
-    fill_in 'Title',       with: job.title
-    fill_in 'Location',    with: job.location
-    select  new_company.name
-    select  new_category.name
-    select  new_contract.name
-    fill_in 'Description', with: job.description
+    fill_in 'job[title]',       with: job.title
+    fill_in 'job[location]',    with: job.location
+    select  new_company.name,   from: 'job[company_id]'
+    select  new_category.name,  from: 'job[category_id]'
+    select  new_contract.name,  from: 'job[contract_id]'
+    fill_in 'job[description]', with: job.description
 
-    click_on 'Atualizar Vaga'
+    click_on 'submit'
 
     expect(page).to have_content job.title
     expect(page).to have_content job.location
-    expect(page).to have_content job.category.name
-    expect(page).to have_content job.contract.name
-    expect(page).to have_content 'Code Campus'
+    expect(page).to have_content new_category.name
+    expect(page).to have_content new_contract.name
+    expect(page).to have_content new_company.name
     expect(page).to have_content job.description
   end
 
   scenario 'featured job' do
     user = login_user
 
-    company = Company.create(name:     'Campus Code',
-                            location: 'São Paulo',
-                            mail:     'contato@campuscode.com.br',
-                            phone:    '2369-3476',
-                            user: user)
+    company = create_company(user: user)
 
-    category = Category.create(name: 'Desenvolvedor')
+    category = create_category
 
     job = create_job(company, {category: category})
 
     visit edit_job_path(job)
 
-    fill_in 'Title',       with: job.title
-    fill_in 'Location',    with: job.location
-    select  'Campus Code'
-    select  'Desenvolvedor'
-    select  job.contract.name
-    fill_in 'Description', with: job.description
-    check   'Featured'
+    fill_in 'job[title]',       with: job.title
+    fill_in 'job[location]',    with: job.location
+    select  company.name,      from: 'job[company_id]'
+    select  category.name,    from: 'job[category_id]'
+    select  job.contract.name,  from: 'job[contract_id]'
+    fill_in 'job[description]', with: job.description
+    check   'job[featured]'
 
-    click_on 'Atualizar Vaga'
+    click_on 'submit'
 
     expect(page).to have_content job.title
     expect(page).to have_content job.location
-    expect(page).to have_content 'Desenvolvedor'
+    expect(page).to have_content job.category.name
     expect(page).to have_content job.contract.name
-    expect(page).to have_content 'Campus Code'
+    expect(page).to have_content job.company.name
     expect(page).to have_content job.description
     expect(page).to have_content 'Vaga em Destaque'
   end
@@ -81,11 +67,7 @@ feature 'User edit a job' do
   scenario "User trying to edit jobs of other users" do
     user = login_user
 
-    company = Company.create(name:    'Campus Code',
-                            location: 'São Paulo',
-                            mail:     'contato@campuscode.com.br',
-                            phone:    '2369-3476',
-                            user: create_user)
+    company = create_company
 
     job = create_job(company)
 
