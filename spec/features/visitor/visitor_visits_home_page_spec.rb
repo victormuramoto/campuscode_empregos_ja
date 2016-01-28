@@ -9,6 +9,7 @@ feature 'visitor visits the home page' do
   scenario 'visitor can see jobs in home page'do
     job_1 = create_job(company: create_company, category: create_category)
     job_2 = create_job(title:'Full Stack Python', company:create_company, category: create_category)
+
     visit root_path
 
     expect(page).to have_content('Developer ruby')

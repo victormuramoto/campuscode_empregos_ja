@@ -16,13 +16,13 @@ feature 'visitor see job by company' do
     company1 = create_company(name:'Locaweb')
     company2 = create_company(name:'Campus Code')
 
-    job1 = create_job(title:'Dev C#',company: company1)
-    job2 = create_job(title:'Dev Python',company:company1)
-    job3 = create_job(title:'Dev Haskell',company:company1)
+    job1 = create_job(title:'Dev C#',company: company1,category: create_category)
+    job2 = create_job(title:'Dev Python',company:company1,category: create_category)
+    job3 = create_job(title:'Dev Haskell',company:company1,category: create_category)
 
-    job4 = create_job(title:'Dev Java',company:  company2)
-    job5 = create_job(title:'Dev C++',company:  company2)
-    job6 = create_job(title:'Dev Ruby',company:  company2)
+    job4 = create_job(title:'Dev Java',company:  company2,category: create_category)
+    job5 = create_job(title:'Dev C++',company:  company2,category: create_category)
+    job6 = create_job(title:'Dev Ruby',company:  company2,category: create_category)
 
 
     visit root_path
