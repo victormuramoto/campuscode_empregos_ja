@@ -13,6 +13,5 @@ feature 'visitor can see job details' do
   expect(page).to have_content('Developer')
   expect(page).to have_content('teste')
 
-
   end
 end

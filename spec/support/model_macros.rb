@@ -7,11 +7,11 @@ module ModelsMacros
 
   end
 
-  def create_company
-    Company.create(name:'Locaweb',
+  def create_company(attrs = {})
+    Company.create({name:'Locaweb',
                   location:'SP',
                   email:'rh@locaweb.com.br',
-                  phone:'1212-1212')
+                  phone:'1212-1212'}.merge(attrs))
   end
 
   def new_company

@@ -5,3 +5,7 @@
   Localização: <%= job.location %>
   Empresa: <%= job.company.name %>
 <% end %>
+
+<% @companies.each do |company| %>
+  <%= link_to company.name, company %>
+<% end %>

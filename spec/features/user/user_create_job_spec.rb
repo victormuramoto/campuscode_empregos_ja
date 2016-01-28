@@ -24,8 +24,7 @@ feature 'user create a job' do
   end
 
   scenario 'user can feature a job' do
-    job = new_job(company:create_company)
-
+    job = new_job(title:'Dev c#',company:create_company)
     visit new_job_path
 
     fill_in 'Título',           with: job.title
@@ -47,11 +46,9 @@ feature 'user create a job' do
 
   scenario "field can't be blank" do
     visit new_job_path
-
     click_on 'Criar Vaga'
 
     expect(page).to have_content "Warning: The fields can't be blank"
-
 
   end
 

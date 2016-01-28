@@ -13,6 +13,7 @@ class JobsController < ApplicationController
     if @job.save
       redirect_to @job
     else
+      flash[:warning] = "Warning: The fields can't be blank"
       render :new
     end
   end
