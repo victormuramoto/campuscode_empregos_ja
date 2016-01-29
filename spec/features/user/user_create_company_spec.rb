@@ -7,9 +7,9 @@ feature 'user create a company' do
     visit new_company_path
 
     fill_in 'company[name]',        with: company.name
-    fill_in 'company[location]', with: company.location
+    fill_in 'company[location]',    with: company.location
     fill_in 'company[email]',       with: company.email
-    fill_in 'company[phone]',    with: company.phone
+    fill_in 'company[phone]',       with: company.phone
 
     click_on 'Criar Empresa'
 

@@ -1,6 +1,9 @@
 ]<h1>Emprego Já</h1>
 
 <% @jobs.each do |job| %>
+  <% if job.featured %>
+    Vaga em Destaque
+  <% end %>
   Título: <%= job.title %>
   Localização: <%= job.location %>
   Empresa: <%= job.company.name %>

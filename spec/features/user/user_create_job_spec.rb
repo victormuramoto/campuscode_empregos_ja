@@ -28,10 +28,10 @@ feature 'user create a job' do
     visit new_job_path
 
     fill_in 'job[title]',           with: job.title
-    select  job.company.name,   from:'job[company_id]'
-    select  job.category.name,  from: 'job[category_id]'
-    fill_in 'job[location]',      with: job.location
-    fill_in 'job[description]',        with: job.description
+    select  job.company.name,       from:'job[company_id]'
+    select  job.category.name,      from: 'job[category_id]'
+    fill_in 'job[location]',        with: job.location
+    fill_in 'job[description]',     with: job.description
     check   'job[featured]'
 
     click_on 'submit'
