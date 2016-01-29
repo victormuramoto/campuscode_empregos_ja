@@ -14,8 +14,8 @@ feature 'visitor see job by category' do
 
   scenario 'visitor see list of jobs available by category' do
     company = create_company
-    category1 = create_category(name:'Locaweb')
-    category2 = create_category(name:'Campus Code')
+    category1 = create_category(name:'Developer')
+    category2 = create_category(name:'Analista QA')
 
     job1 = create_job(title:'Dev C#',company: company,category: category1)
     job2 = create_job(title:'Dev Python',company:company,category: category1)
