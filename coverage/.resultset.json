@@ -64,6 +64,9 @@
       ],
       "/home/victor/workspace/campuscode/exercises/emprego-ja/app/controllers/companies_controller.rb": [
         1,
+        1,
+        1,
+        null,
         null,
         1,
         2,
@@ -71,10 +74,6 @@
         null,
         1,
         2,
-        null,
-        null,
-        1,
-        2,
         2,
         1,
         null,
@@ -85,8 +84,23 @@
         null,
         1,
         null,
+        null,
         1,
         2,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        4,
+        null,
+        null,
+        1,
+        7,
         null,
         null,
         null,
@@ -153,6 +167,6 @@
         null
       ]
     },
-    "timestamp": 1454094325
+    "timestamp": 1454094921
   }
 }

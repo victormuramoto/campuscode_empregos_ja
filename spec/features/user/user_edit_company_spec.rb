@@ -23,4 +23,20 @@ feature 'User can edit company' do
     expect(page).to have_content company2.phone
 
   end
+
+  scenario "fields can't be blank" do
+    company1 = create_company
+
+    visit edit_company_path(company1)
+
+    fill_in 'company[name]',         with:''
+    fill_in 'company[location]',     with:''
+    fill_in 'company[email]',        with:''
+    fill_in 'company[phone]',        with:''
+
+    click_on 'submit'
+
+    expect(page).to have_content "Warning: The fields can't be blank"
+    
+  end
 end
