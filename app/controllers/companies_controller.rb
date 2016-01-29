@@ -13,6 +13,7 @@ class CompaniesController < ApplicationController
     if @company.save
       redirect_to @company
     else
+      flash[:warning] = "Warning: The fields can't be blank"
       render :new
     end
   end

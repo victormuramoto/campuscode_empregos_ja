@@ -12,7 +12,7 @@ feature 'user create a job' do
     select  job.category.name,  from: 'job[category_id]'
     fill_in 'job[location]',      with: job.location
     fill_in 'job[description]',        with: job.description
-    check   'job[featured]'
+
     click_on 'submit'
 
     expect(page).to have_content job.title
@@ -41,9 +41,11 @@ feature 'user create a job' do
     expect(page).to have_content job.company.name
     expect(page).to have_content job.category.name
     expect(page).to have_content job.description
+    expect(page).to have_content 'Vaga em Destaque'
+
   end
 
-  scenario "field can't be blank" do
+  scenario "fields can't be blank" do
     visit new_job_path
     click_on 'submit'
 

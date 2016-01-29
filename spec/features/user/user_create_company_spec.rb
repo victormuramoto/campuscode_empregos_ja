@@ -18,4 +18,12 @@ feature 'user create a company' do
     expect(page).to have_content company.email
     expect(page).to have_content company.phone
   end
+
+  scenario "fields can't be blank" do
+    visit new_company_path
+    click_on 'submit'
+
+    expect(page).to have_content "Warning: The fields can't be blank"
+
+  end
 end
