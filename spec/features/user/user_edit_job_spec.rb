@@ -48,6 +48,29 @@ feature 'User edit job' do
     expect(page).to have_content 'tt duas vezes'
     expect(page).to have_content 'Vaga em Destaque'
 
+  end
+
+  scenario "fields can't be blank" do
+    new_company = create_company(name:"Campus Code")
+    new_category = create_category(name:"Analista QA")
+    job = create_job(company: create_company, category: create_category)
+
+    visit edit_job_path(job)
+
+    fill_in 'job[title]',         with: ''
+
+    within '#job_company_id' do find("option[value='']").click end
+    within '#job_company_id' do find("option[value='']").click end
+    fill_in 'job[location]',      with: ''
+    fill_in 'job[description]',   with: ''
+    check 'job[featured]'
+
+    click_on 'submit'
+
+    expect(page).to have_content "Warning: The fields can't be blank"
+
 
   end
+
+
 end

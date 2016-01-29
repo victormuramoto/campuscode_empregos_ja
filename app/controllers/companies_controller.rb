@@ -24,6 +24,7 @@ class CompaniesController < ApplicationController
     if @company.update(company_params)
       redirect_to @company
     else
+      flash[:warning] = "Warning: The fields can't be blank"
       render :edit
     end
   end

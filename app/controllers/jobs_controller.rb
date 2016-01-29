@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  before_action :set_collections, only: [:new, :create, :edit]
+  before_action :set_collections, only: [:new, :create, :edit,:update]
   before_action :set_job, only: [:edit, :show, :update]
 
   def show
@@ -26,6 +26,7 @@ class JobsController < ApplicationController
     if @job.update(job_params)
       redirect_to @job
     else
+      flash[:warning] = "Warning: The fields can't be blank"
       render :edit
     end
   end
