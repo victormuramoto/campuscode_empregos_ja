@@ -7,11 +7,11 @@ feature 'visitor can see job details' do
 
   visit job_path(job)
 
-  expect(page).to have_content('Developer ruby')
-  expect(page).to have_content('SP')
-  expect(page).to have_content('Locaweb')
-  expect(page).to have_content('Developer')
-  expect(page).to have_content('teste')
+  expect(page).to have_content job.title
+  expect(page).to have_content job.location
+  expect(page).to have_content job.company.name
+  expect(page).to have_content job.category.name
+  expect(page).to have_content job.description
 
   end
 end

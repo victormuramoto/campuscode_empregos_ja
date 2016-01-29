@@ -12,11 +12,13 @@ feature 'visitor visits the home page' do
 
     visit root_path
 
-    expect(page).to have_content('Developer ruby')
-    expect(page).to have_content('SP')
-    expect(page).to have_content(job_1.company.name)
-    expect(page).to have_content(job_2.company.name)
-    expect(page).to have_content('Python')
+    expect(page).to have_content job_1.title
+    expect(page).to have_content job_1.location
+    expect(page).to have_content job_1.company.name
+
+    expect(page).to have_content job_2.company.name
+    expect(page).to have_content job_2.location
+    expect(page).to have_content job_2.title
 
   end
 end
