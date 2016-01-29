@@ -13,4 +13,13 @@ feature 'User create categories' do
     expect(page).to have_content category.name
 
   end
+
+  scenario "fields can't be blank" do
+    visit new_category_path
+
+    click_on 'submit'
+    
+    expect(page).to have_content "Warning: The fields can't be blank"
+
+  end
 end

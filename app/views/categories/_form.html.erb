@@ -1,0 +1,7 @@
+<span class="error_message"><%= flash[:warning] %></span>
+<%= form_for @category do |f| %>
+<%= f.label :name, 'Nome' %>
+<%= f.text_field :name %>
+
+<%= f.submit button_label,id:'submit' %>
+<% end %>
