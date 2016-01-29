@@ -31,5 +31,9 @@ module ModelsMacros
     Category.create({name:"Desenvolvedor"}.merge(attrs))
   end
 
+  def new_category(attrs= {})
+    Category.new({name:"Desenvolvedor"}.merge(attrs))
+  end
+
 
 end
