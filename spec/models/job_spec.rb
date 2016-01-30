@@ -33,4 +33,37 @@ RSpec.describe Job, type: :model do
 
   end
 
+  describe '#expired?' do
+
+    context "created 85 days ago" do
+      it "is not expired" do
+        job = nil
+        travel_to 85.days.ago do
+          job = create_job(company:create_company,category:create_category)
+        end
+        expect(job).to_not be_expired
+      end
+    end
+
+    context "created 90 days ago" do
+      it "is expired" do
+        job = nil
+        travel_to 85.days.ago do
+          job = create_job(company:create_company,category:create_category)
+        end
+        expect(job).to be_expired
+      end
+    end
+
+    context "created 95 days ago" do
+      it "is expired" do
+        job = nil
+        travel_to 85.days.ago do
+          job = create_job(company:create_company,category:create_category)
+        end
+        expect(job).to be_expired
+      end
+    end
+  end
+
 end
