@@ -3,14 +3,16 @@ module ModelsMacros
     Job.create({title:'Developer ruby',
               location:'SP',
               description:'teste',
-              featured:true}.merge(attrs))
+              featured:true,
+              contract:'CLT'}.merge(attrs))
   end
 
   def new_job(attrs= {})
     Job.new({title:'Developer ruby',
              location:'SP',
              description:'teste',
-             featured:true}.merge(attrs))
+             featured:true,
+             contract:'CLT'}.merge(attrs))
   end
 
   def create_company(attrs = {})

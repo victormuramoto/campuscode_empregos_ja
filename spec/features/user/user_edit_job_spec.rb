@@ -12,6 +12,7 @@ feature 'User edit job' do
     fill_in 'job[title]',         with: 'Developer Haskell'
     select new_company.name,      from: 'job[company_id]'
     select new_category.name,     from: 'job[category_id]'
+    select 'PJ',                  from: 'job[contract_id]'
     fill_in 'job[location]',      with: 'RS'
     fill_in 'job[description]',   with: 'tt duas vezes'
 
@@ -22,6 +23,7 @@ feature 'User edit job' do
     expect(page).to have_content new_category.name
     expect(page).to have_content 'RS'
     expect(page).to have_content 'tt duas vezes'
+    expect(page).to have_content 'PJ'
 
 
   end
@@ -47,6 +49,7 @@ feature 'User edit job' do
     fill_in 'job[title]',         with: 'Developer Haskell'
     select new_company.name,      from: 'job[company_id]'
     select new_category.name,     from: 'job[category_id]'
+    select 'PJ',                  from: 'job[contract_id]'
     fill_in 'job[location]',      with: 'RS'
     fill_in 'job[description]',   with: 'tt duas vezes'
     check 'job[featured]'
@@ -59,6 +62,7 @@ feature 'User edit job' do
     expect(page).to have_content 'RS'
     expect(page).to have_content 'tt duas vezes'
     expect(page).to have_content 'Vaga em Destaque'
+    expect(page).to have_content 'PJ'
 
   end
 
@@ -74,6 +78,7 @@ feature 'User edit job' do
 
     within '#job_company_id' do find("option[value='']").click end
     within '#job_company_id' do find("option[value='']").click end
+    within '#job_contract_id' do find("option[value='']").click end
     fill_in 'job[location]',      with: ''
     fill_in 'job[description]',   with: ''
     check 'job[featured]'
