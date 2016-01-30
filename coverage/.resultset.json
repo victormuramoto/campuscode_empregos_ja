@@ -5,10 +5,18 @@
         1,
         null
       ],
-      "/home/victor/workspace/campuscode/exercises/emprego-ja/app/models/company.rb": [
+      "/home/victor/workspace/campuscode/exercises/emprego-ja/app/models/job.rb": [
         1,
         1,
         1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        8,
+        null,
+        null,
         null
       ],
       "/home/victor/workspace/campuscode/exercises/emprego-ja/app/models/category.rb": [
@@ -55,8 +63,7 @@
         1,
         null
       ],
-      "/home/victor/workspace/campuscode/exercises/emprego-ja/app/models/job.rb": [
-        1,
+      "/home/victor/workspace/campuscode/exercises/emprego-ja/app/models/company.rb": [
         1,
         1,
         1,
@@ -169,6 +176,6 @@
         null
       ]
     },
-    "timestamp": 1454101973
+    "timestamp": 1454114679
   }
 }

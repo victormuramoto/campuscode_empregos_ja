@@ -1,6 +1,9 @@
 <% if @job.featured %>
   Vaga em Destaque
 <% end %>
+<% if @job.recent? %>
+  Novidade
+<% end %>
 Título: <%= @job.title %>
 Localização: <%= @job.location %>
 Categoria: <%= @job.category.name %>

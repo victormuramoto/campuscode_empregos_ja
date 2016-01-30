@@ -1,26 +1,35 @@
 require 'rails_helper'
 
-RSpec.describe Company, type: :model do
+RSpec.describe Job, type: :model do
+
   describe "#recent?" do
-    
-    context 'created today' do
-      it 'is recent' do
-        expect(create_job).to be_recent
+
+    context "created today" do
+      it "is recent" do
+        job = create_job(company:create_company,category:create_category)
+        expect(job).to be_recent
       end
     end
 
-    context 'created 4 days ago' do
-      it 'is recent' do
-        expect(create_job).to be_recent
+    context "created 6 days ago" do
+      it "is not recent" do
+        job = nil
+        travel_to 6.days.ago do
+          job = create_job(company:create_company,category:create_category)
+        end
+        expect(job).to_not be_recent
       end
     end
 
-    context 'created 6 days ago' do
-      it 'is not recent' do
-        expect(create_job).to_not be_recent
+    context "created 4 days ago" do
+      it "is recent" do
+        job = nil
+        travel_to 4.days.ago do
+          job = create_job(company:create_company,category:create_category)
+        end
+        expect(job).to be_recent
       end
     end
-
 
   end
 

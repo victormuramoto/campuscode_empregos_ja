@@ -14,4 +14,5 @@ feature 'visitor can see job details' do
   expect(page).to have_content job.description
 
   end
+
 end
