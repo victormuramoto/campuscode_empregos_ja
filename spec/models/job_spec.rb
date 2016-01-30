@@ -11,15 +11,6 @@ RSpec.describe Job, type: :model do
       end
     end
 
-    context "created 6 days ago" do
-      it "is not recent" do
-        job = nil
-        travel_to 6.days.ago do
-          job = create_job(company:create_company,category:create_category)
-        end
-        expect(job).to_not be_recent
-      end
-    end
 
     context "created 4 days ago" do
       it "is recent" do
@@ -28,6 +19,26 @@ RSpec.describe Job, type: :model do
           job = create_job(company:create_company,category:create_category)
         end
         expect(job).to be_recent
+      end
+    end
+
+    context "created 5 days ago" do
+      it "is not recent" do
+        job = nil
+        travel_to 5.days.ago do
+          job = create_job(company:create_company,category:create_category)
+        end
+        expect(job).to_not be_recent
+      end
+    end
+
+    context "created 6 days ago" do
+      it "is not recent" do
+        job = nil
+        travel_to 6.days.ago do
+          job = create_job(company:create_company,category:create_category)
+        end
+        expect(job).to_not be_recent
       end
     end
 
@@ -48,7 +59,7 @@ RSpec.describe Job, type: :model do
     context "created 90 days ago" do
       it "is expired" do
         job = nil
-        travel_to 85.days.ago do
+        travel_to 90.days.ago do
           job = create_job(company:create_company,category:create_category)
         end
         expect(job).to be_expired
@@ -58,7 +69,7 @@ RSpec.describe Job, type: :model do
     context "created 95 days ago" do
       it "is expired" do
         job = nil
-        travel_to 85.days.ago do
+        travel_to 95.days.ago do
           job = create_job(company:create_company,category:create_category)
         end
         expect(job).to be_expired

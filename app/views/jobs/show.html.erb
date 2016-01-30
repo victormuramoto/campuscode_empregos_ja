@@ -1,11 +1,14 @@
-<% if @job.featured %>
-  Vaga em Destaque
-<% end %>
-<% if @job.recent? %>
-  Novidade
-<% end %>
-Título: <%= @job.title %>
-Localização: <%= @job.location %>
-Categoria: <%= @job.category.name %>
-Empresa: <%= @job.company.name %>
-Descrição: <%= @job.description %>
+  <% if @job.expired? %>
+    Vaga Expirada
+  <% end %>
+  <% if @job.featured %>
+    Vaga em Destaque
+  <% end %>
+  <% if @job.recent? %>
+    Novidade
+  <% end %>
+  Título: <%= @job.title %>
+  Localização: <%= @job.location %>
+  Categoria: <%= @job.category.name %>
+  Empresa: <%= @job.company.name %>
+  Descrição: <%= @job.description %>

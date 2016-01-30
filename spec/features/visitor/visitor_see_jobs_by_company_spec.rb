@@ -45,5 +45,24 @@ feature 'visitor see job by company' do
 
   end
 
+  scenario 'visitor see premium companies' do
+    company1 = create_company(name:'Locaweb')
+
+    category = create_category
+
+    5.times do
+      create_job(company:company1, category:category)
+    end
+    visit company_path(company1)
+
+    expect(page).to have_content company1.name
+    expect(page).to have_content company1.location
+    expect(page).to have_content company1.phone
+    expect(page).to have_content company1.email
+    expect(page).to have_content 'Anunciante Premium'
+
+
+  end
+
 
 end

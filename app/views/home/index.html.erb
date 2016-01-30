@@ -1,19 +1,24 @@
 ]<h1>Emprego Já</h1>
 
 <% @jobs.each do |job| %>
-  <% if job.featured %>
-    Vaga em Destaque
+  <% if !job.expired? %>
+    <% if job.featured %>
+      Vaga em Destaque
+    <% end %>
+    <% if job.recent? %>
+      Novidade
+    <% end %>
+    Título: <%= job.title %>
+    Localização: <%= job.location %>
+    Empresa: <%= job.company.name %>
   <% end %>
-  <% if job.recent? %>
-    Novidade
-  <% end %>
-  Título: <%= job.title %>
-  Localização: <%= job.location %>
-  Empresa: <%= job.company.name %>
 <% end %>
 
 <% @companies.each do |company| %>
   <%= link_to company.name, company %>
+  <% if company.premium? %>
+    Anunciante Premium
+  <% end %>
 <% end %>
 
 <% @categories.each do |category| %>
