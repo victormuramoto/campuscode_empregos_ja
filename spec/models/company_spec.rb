@@ -37,7 +37,7 @@ RSpec.describe Company, type: :model do
           5.times do
             create_job(company:@company,category:@category)
           end
-          expect(@company).to_not be_premium
+          expect(@company).to be_premium
         end
       end
 
@@ -46,7 +46,7 @@ RSpec.describe Company, type: :model do
           6.times do
             create_job(company:@company,category:@category)
           end
-          expect(@company).to_not be_premium
+          expect(@company).to be_premium
         end
       end
 

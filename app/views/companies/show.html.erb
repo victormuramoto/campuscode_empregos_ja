@@ -1,3 +1,6 @@
+<% if @company.premium? %>
+  Anunciante Premium
+<% end %>
 Título: <%= @company.name %>
 Localização: <%= @company.location %>
 Categoria: <%= @company.email %>

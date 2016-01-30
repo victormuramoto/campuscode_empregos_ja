@@ -8,7 +8,12 @@
       "/home/victor/workspace/campuscode/exercises/emprego-ja/app/models/company.rb": [
         1,
         1,
+        null,
         1,
+        null,
+        1,
+        8,
+        null,
         null
       ],
       "/home/victor/workspace/campuscode/exercises/emprego-ja/app/models/job.rb": [
@@ -20,7 +25,7 @@
         1,
         null,
         1,
-        8,
+        23,
         null,
         null,
         null
@@ -176,6 +181,6 @@
         null
       ]
     },
-    "timestamp": 1454116055
+    "timestamp": 1454117094
   }
 }
