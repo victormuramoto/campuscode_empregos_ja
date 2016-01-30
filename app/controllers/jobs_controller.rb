@@ -35,12 +35,13 @@ class JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:title,:location,:category_id,:company_id,:description,:featured)
+    params.require(:job).permit(:title,:location,:category_id,:company_id,:description,:featured,:contract_id)
   end
 
   def set_collections
     @companies = Company.all
     @categories = Category.all
+    @contracts = Contract.all
   end
 
   def set_job

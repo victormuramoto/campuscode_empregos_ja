@@ -8,6 +8,8 @@
 <%= f.collection_select :company_id, @companies, :id,:name, include_blank: 'Selecione' %>
 <%= f.label :category_id, 'Categoria' %>
 <%= f.collection_select :category_id, @categories , :id,:name, include_blank: 'Selecione' %>
+<%= f.label :contract_id, 'Contrato' %>
+<%= f.collection_select :contract_id, @contracts , :id,:name, include_blank: 'Selecione' %>
 <%= f.label :description, 'Descrição' %>
 <%= f.text_area :description %>
 <%= f.check_box :featured %>

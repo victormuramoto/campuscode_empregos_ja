@@ -3,14 +3,14 @@ require 'rails_helper'
 feature 'user create a job' do
   scenario 'success' do
     login_user
-    job = new_job(company:create_company,category:create_category)
+    job = new_job()
 
     visit new_job_path
 
     fill_in 'job[title]',           with: job.title
     select  job.company.name,       from:'job[company_id]'
     select  job.category.name,      from: 'job[category_id]'
-    select  job.contract,           from: 'job[contract_id]'
+    select  job.contract.name,      from: 'job[contract_id]'
     fill_in 'job[location]',        with: job.location
     fill_in 'job[description]',     with: job.description
 
@@ -21,7 +21,7 @@ feature 'user create a job' do
     expect(page).to have_content job.company.name
     expect(page).to have_content job.category.name
     expect(page).to have_content job.description
-    expect(page).to have_content job.contract
+    expect(page).to have_content job.contract.name
 
   end
 
@@ -38,13 +38,14 @@ feature 'user create a job' do
 
   scenario 'user can feature a job' do
     login_user
-    job = new_job(title:'Dev c#',company:create_company,category:create_category)
+    job = new_job(title:'Dev c#')
     visit new_job_path
 
     fill_in 'job[title]',           with: job.title
     select  job.company.name,       from:'job[company_id]'
     select  job.category.name,      from: 'job[category_id]'
-    select  job.contract,           from: 'job[contract_id]'
+    select  job.contract.name,      from: 'job[contract_id]'
+
     fill_in 'job[location]',        with: job.location
     fill_in 'job[description]',     with: job.description
     check   'job[featured]'
@@ -57,7 +58,7 @@ feature 'user create a job' do
     expect(page).to have_content job.category.name
     expect(page).to have_content job.description
     expect(page).to have_content 'Vaga em Destaque'
-    expect(page).to have_content job.contract
+    expect(page).to have_content job.contract.name
 
   end
 

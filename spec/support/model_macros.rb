@@ -1,18 +1,23 @@
 module ModelsMacros
   def create_job(attrs = {})
+   attrs[:category] ||= create_category
+   attrs[:contract] ||= create_contract
+   attrs[:company] ||= create_company
+
     Job.create({title:'Developer ruby',
               location:'SP',
               description:'teste',
-              featured:true,
-              contract:'CLT'}.merge(attrs))
+              featured:true}.merge(attrs))
   end
 
   def new_job(attrs= {})
+    attrs[:category] ||= create_category
+    attrs[:contract] ||= create_contract
+    attrs[:company] ||=  create_company
     Job.new({title:'Developer ruby',
              location:'SP',
              description:'teste',
-             featured:true,
-             contract:'CLT'}.merge(attrs))
+             featured:true}.merge(attrs))
   end
 
   def create_company(attrs = {})
@@ -51,4 +56,7 @@ module ModelsMacros
     click_on 'Log in'
   end
 
+  def create_contract(attrs = {})
+    Contract.create({name:"CLT"}.merge(attrs))
+  end
 end

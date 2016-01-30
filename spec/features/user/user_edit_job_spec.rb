@@ -5,14 +5,15 @@ feature 'User edit job' do
     login_user
     new_company = create_company(name:"Campus Code")
     new_category = create_category(name:"Analista QA")
-    job = create_job(company: create_company, category: create_category)
+    new_contract = create_contract(name:"PJ")
+    job = create_job
 
     visit edit_job_path(job)
 
     fill_in 'job[title]',         with: 'Developer Haskell'
     select new_company.name,      from: 'job[company_id]'
     select new_category.name,     from: 'job[category_id]'
-    select 'PJ',                  from: 'job[contract_id]'
+    select new_contract.name,     from: 'job[contract_id]'
     fill_in 'job[location]',      with: 'RS'
     fill_in 'job[description]',   with: 'tt duas vezes'
 
@@ -21,6 +22,7 @@ feature 'User edit job' do
     expect(page).to have_content 'Developer Haskell'
     expect(page).to have_content new_company.name
     expect(page).to have_content new_category.name
+    expect(page).to have_content new_contract.name
     expect(page).to have_content 'RS'
     expect(page).to have_content 'tt duas vezes'
     expect(page).to have_content 'PJ'
@@ -29,7 +31,7 @@ feature 'User edit job' do
   end
 
   scenario 'Redirected to Sign in when he is not logged' do
-    job = create_job(company: create_company, category: create_category)
+    job = create_job
     visit edit_job_path(job)
 
     expect(page).to have_content 'Log in'
@@ -42,14 +44,15 @@ feature 'User edit job' do
     login_user
     new_company = create_company(name:"Campus Code")
     new_category = create_category(name:"Analista QA")
-    job = create_job(company: create_company, category: create_category)
+    new_contract = create_contract(name:"Freelancer")
+    job = create_job
 
     visit edit_job_path(job)
 
     fill_in 'job[title]',         with: 'Developer Haskell'
     select new_company.name,      from: 'job[company_id]'
     select new_category.name,     from: 'job[category_id]'
-    select 'PJ',                  from: 'job[contract_id]'
+    select new_contract.name,     from: 'job[contract_id]'
     fill_in 'job[location]',      with: 'RS'
     fill_in 'job[description]',   with: 'tt duas vezes'
     check 'job[featured]'
@@ -59,10 +62,11 @@ feature 'User edit job' do
     expect(page).to have_content 'Developer Haskell'
     expect(page).to have_content new_company.name
     expect(page).to have_content new_category.name
+    expect(page).to have_content new_contract.name
     expect(page).to have_content 'RS'
     expect(page).to have_content 'tt duas vezes'
     expect(page).to have_content 'Vaga em Destaque'
-    expect(page).to have_content 'PJ'
+    expect(page).to have_content 'Freelancer'
 
   end
 
@@ -70,14 +74,14 @@ feature 'User edit job' do
     login_user
     new_company = create_company(name:"Campus Code")
     new_category = create_category(name:"Analista QA")
-    job = create_job(company: create_company, category: create_category)
+    job = create_job
 
     visit edit_job_path(job)
 
     fill_in 'job[title]',         with: ''
 
-    within '#job_company_id' do find("option[value='']").click end
-    within '#job_company_id' do find("option[value='']").click end
+    within '#job_company_id'  do find("option[value='']").click end
+    within '#job_company_id'  do find("option[value='']").click end
     within '#job_contract_id' do find("option[value='']").click end
     fill_in 'job[location]',      with: ''
     fill_in 'job[description]',   with: ''
