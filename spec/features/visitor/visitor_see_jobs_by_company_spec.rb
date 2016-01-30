@@ -48,10 +48,8 @@ feature 'visitor see job by company' do
   scenario 'visitor see premium companies' do
     company1 = create_company(name:'Locaweb')
 
-    category = create_category
-
     5.times do
-      create_job(company:company1, category:category)
+      create_job(company:company1, category:create_category)
     end
     visit company_path(company1)
 

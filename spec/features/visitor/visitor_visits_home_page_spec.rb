@@ -90,10 +90,8 @@ feature 'visitor visits the home page' do
     company1 = create_company(name:'Locaweb')
     company2 = create_company(name:'Campus Code')
 
-    category = create_category
-
     5.times do
-      create_job(company:company1, category:category)
+      create_job(company:company1, category:create_category)
     end
     visit root_path
 
