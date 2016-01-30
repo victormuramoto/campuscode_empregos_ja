@@ -2,6 +2,7 @@ require 'rails_helper'
 
 feature 'User can edit company' do
   scenario 'success' do
+    login_user
     company1 = create_company
     company2 = new_company(name:'Campus Code',
                           location:"RS",
@@ -24,7 +25,18 @@ feature 'User can edit company' do
 
   end
 
+  scenario 'Redirected to Sign in when he is not logged' do
+    company1 = create_company
+    visit edit_company_path(company1)
+
+    expect(page).to have_content 'Log in'
+    expect(page).to have_content 'Email'
+    expect(page).to have_content 'Password'
+
+  end
+
   scenario "fields can't be blank" do
+    login_user
     company1 = create_company
 
     visit edit_company_path(company1)
@@ -37,6 +49,6 @@ feature 'User can edit company' do
     click_on 'submit'
 
     expect(page).to have_content "Warning: The fields can't be blank"
-    
+
   end
 end

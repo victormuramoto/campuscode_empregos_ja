@@ -68,7 +68,7 @@ feature 'visitor can see job details' do
 
   end
 
-  scenario 'visitor can see not recent job, but is featured'do
+  scenario 'visitor can see a not recent job, but is featured'do
 
     job_1 = nil
     travel_to 6.days.ago do

@@ -2,6 +2,7 @@ require 'rails_helper'
 
 feature 'User edit job' do
   scenario 'success' do
+    login_user
     new_company = create_company(name:"Campus Code")
     new_category = create_category(name:"Analista QA")
     job = create_job(company: create_company, category: create_category)
@@ -25,7 +26,18 @@ feature 'User edit job' do
 
   end
 
+  scenario 'Redirected to Sign in when he is not logged' do
+    job = create_job(company: create_company, category: create_category)
+    visit edit_job_path(job)
+
+    expect(page).to have_content 'Log in'
+    expect(page).to have_content 'Email'
+    expect(page).to have_content 'Password'
+
+  end
+
   scenario 'user wants to feature a job' do
+    login_user
     new_company = create_company(name:"Campus Code")
     new_category = create_category(name:"Analista QA")
     job = create_job(company: create_company, category: create_category)
@@ -51,6 +63,7 @@ feature 'User edit job' do
   end
 
   scenario "fields can't be blank" do
+    login_user
     new_company = create_company(name:"Campus Code")
     new_category = create_category(name:"Analista QA")
     job = create_job(company: create_company, category: create_category)

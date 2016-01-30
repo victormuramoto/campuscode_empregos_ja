@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'user create a job' do
   scenario 'success' do
-    user = login_user
+    login_user
     job = new_job(company:create_company,category:create_category)
 
     visit new_job_path
@@ -23,7 +23,7 @@ feature 'user create a job' do
 
   end
 
-  scenario 'failed - no login' do
+  scenario 'Redirected to Sign in when he is not logged' do
 
     visit new_job_path
 
@@ -31,13 +31,11 @@ feature 'user create a job' do
     expect(page).to have_content 'Email'
     expect(page).to have_content 'Password'
 
-
   end
 
-
-
-
+  
   scenario 'user can feature a job' do
+    login_user
     job = new_job(title:'Dev c#',company:create_company,category:create_category)
     visit new_job_path
 
@@ -60,6 +58,7 @@ feature 'user create a job' do
   end
 
   scenario "fields can't be blank" do
+    login_user
     visit new_job_path
     click_on 'submit'
 
