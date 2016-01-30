@@ -35,5 +35,18 @@ module ModelsMacros
     Category.new({name:"Desenvolvedor"}.merge(attrs))
   end
 
+  def create_user(attrs= {})
+    User.create({email:"user@user.com",password:"12345678"}.merge(attrs))
+  end
+
+  def login_user(attrs= {})
+    user = create_user
+    visit new_user_session_path
+
+    fill_in 'user[email]',           with: user.email
+    fill_in 'user[password]',        with: user.password
+
+    click_on 'Log in'
+  end
 
 end
