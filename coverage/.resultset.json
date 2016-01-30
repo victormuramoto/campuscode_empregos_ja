@@ -5,6 +5,12 @@
         1,
         null
       ],
+      "/home/victor/workspace/campuscode/exercises/emprego-ja/app/models/company.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
       "/home/victor/workspace/campuscode/exercises/emprego-ja/app/models/job.rb": [
         1,
         1,
@@ -60,12 +66,6 @@
         1,
         null,
         null,
-        1,
-        null
-      ],
-      "/home/victor/workspace/campuscode/exercises/emprego-ja/app/models/company.rb": [
-        1,
-        1,
         1,
         null
       ],
@@ -176,6 +176,6 @@
         null
       ]
     },
-    "timestamp": 1454114679
+    "timestamp": 1454116055
   }
 }
