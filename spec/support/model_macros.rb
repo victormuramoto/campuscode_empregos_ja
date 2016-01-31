@@ -54,6 +54,7 @@ module ModelsMacros
     fill_in 'user[password]',        with: user.password
 
     click_on 'Log in'
+    user
   end
 
   def create_contract(attrs = {})

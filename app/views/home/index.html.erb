@@ -1,5 +1,10 @@
 <h1>Emprego Já</h1>
 
+<% if user_signed_in? %>
+  Usuário Logado
+<% end %>
+
+<span class="error_message"><%= flash[:warning] %></span>
 <% @jobs.each do |job| %>
   <% if !job.expired? %>
     <% if job.featured %>

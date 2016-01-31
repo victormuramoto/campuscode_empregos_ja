@@ -2,8 +2,8 @@ require 'rails_helper'
 
 feature 'User can edit company' do
   scenario 'success' do
-    login_user
-    company1 = create_company
+    user = login_user
+    company1 = create_company(user:user)
     company2 = new_company(name:'Campus Code',
                           location:"RS",
                           email:'rh@campuscode.com.br',
@@ -52,8 +52,8 @@ feature 'User can edit company' do
   end
 
   scenario "fields can't be blank" do
-    login_user
-    company1 = create_company
+    user = login_user
+    company1 = create_company(user:user)
 
     visit edit_company_path(company1)
 
