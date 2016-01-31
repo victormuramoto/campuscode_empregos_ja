@@ -2,7 +2,7 @@ module ModelsMacros
   def create_job(attrs = {})
    attrs[:category] ||= create_category
    attrs[:contract] ||= create_contract
-   attrs[:company] ||= create_company
+   attrs[:company]  ||= create_company
 
     Job.create({title:'Developer ruby',
               location:'SP',
@@ -13,7 +13,7 @@ module ModelsMacros
   def new_job(attrs= {})
     attrs[:category] ||= create_category
     attrs[:contract] ||= create_contract
-    attrs[:company] ||=  create_company
+    attrs[:company]  ||= create_company
     Job.new({title:'Developer ruby',
              location:'SP',
              description:'teste',

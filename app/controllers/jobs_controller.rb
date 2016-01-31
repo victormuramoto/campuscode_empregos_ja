@@ -2,6 +2,8 @@ class JobsController < ApplicationController
   before_action :authenticate_user!, only: [:new,:create,:edit,:update]
   before_action :set_collections, only: [:new, :create, :edit,:update]
   before_action :set_job, only: [:edit, :show, :update]
+  before_action :check_user, only: [:edit, :update]
+
 
   def show
   end
@@ -21,6 +23,7 @@ class JobsController < ApplicationController
   end
 
   def edit
+    check_user
   end
 
   def update
@@ -47,4 +50,12 @@ class JobsController < ApplicationController
   def set_job
     @job = Job.find(params[:id])
   end
+
+  def check_user
+    if current_user != @job.company.user
+      flash[:warning] = "Warning:You can't edit jobs of other users"
+      redirect_to root_path
+    end
+  end
+  
 end
