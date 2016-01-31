@@ -60,4 +60,7 @@ module ModelsMacros
   def create_contract(attrs = {})
     Contract.create({name:"CLT"}.merge(attrs))
   end
+  def new_contract(attrs = {})
+    Contract.new({name:"CLT"}.merge(attrs))
+  end
 end

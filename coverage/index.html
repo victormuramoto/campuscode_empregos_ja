@@ -14,26 +14,26 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-01-31T21:25:03-02:00">2016-01-31T21:25:03-02:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-01-31T21:42:05-02:00">2016-01-31T21:42:05-02:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">99.44%</span></span>
+    (<span class="covered_percent"><span class="green">99.47%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         10.72
+         10.42
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>14</b> files in total.
-    <b>177</b> relevant lines. 
-    <span class="green"><b>176</b> lines covered</span> and
+    <b>188</b> relevant lines. 
+    <span class="green"><b>187</b> lines covered</span> and
     <span class="red"><b>1</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -67,7 +67,7 @@
         <td>17</td>
         <td>17</td>
         <td>0</td>
-        <td>1.3</td>
+        <td>1.4</td>
       </tr>
       
       <tr>
@@ -83,11 +83,11 @@
       <tr>
         <td class="strong"><a href="#3a356b9519cec776118c6799e68e4d8064a827f4" class="src_link" title="app/controllers/contracts_controller.rb">app/controllers/contracts_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>13</td>
-        <td>6</td>
-        <td>6</td>
+        <td>31</td>
+        <td>17</td>
+        <td>17</td>
         <td>0</td>
-        <td>1.0</td>
+        <td>1.2</td>
       </tr>
       
       <tr>
@@ -107,7 +107,7 @@
         <td>12</td>
         <td>12</td>
         <td>0</td>
-        <td>28.0</td>
+        <td>29.2</td>
       </tr>
       
       <tr>
@@ -137,7 +137,7 @@
         <td>38</td>
         <td>37</td>
         <td>1</td>
-        <td>27.7</td>
+        <td>28.5</td>
       </tr>
       
       <tr>
@@ -203,15 +203,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         5.3
+         5.07
        </span>
     </span> hits/line)
   </h2>
   <a name="Controllers"></a>
   <div>
     <b>7</b> files in total.
-    <b>109</b> relevant lines. 
-    <span class="green"><b>109</b> lines covered</span> and
+    <b>120</b> relevant lines. 
+    <span class="green"><b>120</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -245,7 +245,7 @@
         <td>17</td>
         <td>17</td>
         <td>0</td>
-        <td>1.3</td>
+        <td>1.4</td>
       </tr>
       
       <tr>
@@ -261,11 +261,11 @@
       <tr>
         <td class="strong"><a href="#3a356b9519cec776118c6799e68e4d8064a827f4" class="src_link" title="app/controllers/contracts_controller.rb">app/controllers/contracts_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>13</td>
-        <td>6</td>
-        <td>6</td>
+        <td>31</td>
+        <td>17</td>
+        <td>17</td>
         <td>0</td>
-        <td>1.0</td>
+        <td>1.2</td>
       </tr>
       
       <tr>
@@ -285,7 +285,7 @@
         <td>12</td>
         <td>12</td>
         <td>0</td>
-        <td>28.0</td>
+        <td>29.2</td>
       </tr>
       
       <tr>
@@ -434,7 +434,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         27.02
+         27.79
        </span>
     </span> hits/line)
   </h2>
@@ -476,7 +476,7 @@
         <td>38</td>
         <td>37</td>
         <td>1</td>
-        <td>27.7</td>
+        <td>28.5</td>
       </tr>
       
     </tbody>
@@ -731,8 +731,8 @@
           <code class="ruby">  def set_category</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="24">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="24">
+          <span class="hits">3</span>
           
           <code class="ruby">    @category = Category.find(params[:id])</code>
         </li>
@@ -1148,8 +1148,8 @@
     <h3>app/controllers/contracts_controller.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>6</b> relevant lines. 
-      <span class="green"><b>6</b> lines covered</span> and
+      <b>17</b> relevant lines. 
+      <span class="green"><b>17</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1166,70 +1166,178 @@
         <li class="covered" data-hits="1" data-linenumber="2">
           <span class="hits">1</span>
           
+          <code class="ruby">  before_action :authenticate_user!, only: [:new,:create]</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
           <code class="ruby">  before_action :set_contract, only:[:show]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="3">
+        <li class="never" data-hits="" data-linenumber="4">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="4">
+        <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">  def show</code>
+          <code class="ruby">  def new</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="5">
+        <li class="covered" data-hits="2" data-linenumber="6">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="6">
-          
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    @contract = Contract.new</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="7">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="8">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  private</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="9">
+        <li class="never" data-hits="" data-linenumber="8">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="10">
+        <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
-          <code class="ruby">  def set_contract</code>
+          <code class="ruby">  def create</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="11">
+        <li class="covered" data-hits="2" data-linenumber="10">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    @contract = Category.new(contract_params)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="11">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    if @contract.save</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
-          <code class="ruby">    @contract = Contract.find(params[:id])</code>
+          <code class="ruby">      redirect_to @contract</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="12">
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby">    else</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="14">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      flash[:warning] = &quot;Warning: The fields can&#39;t be blank&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="15">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      render :new</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="13">
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="19">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def show</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="22">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  private</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def set_contract</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="25">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @contract = Contract.find(params[:id])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="27">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="28">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def contract_params</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="29">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    params.require(:contract).permit(:name)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
           
           
           <code class="ruby">end</code>
@@ -1355,26 +1463,26 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="38" data-linenumber="5">
-          <span class="hits">38</span>
+        <li class="covered" data-hits="40" data-linenumber="5">
+          <span class="hits">40</span>
           
           <code class="ruby">    @jobs = check_expired_job</code>
         </li>
       
-        <li class="covered" data-hits="38" data-linenumber="6">
-          <span class="hits">38</span>
+        <li class="covered" data-hits="40" data-linenumber="6">
+          <span class="hits">40</span>
           
           <code class="ruby">    @companies = Company.all</code>
         </li>
       
-        <li class="covered" data-hits="38" data-linenumber="7">
-          <span class="hits">38</span>
+        <li class="covered" data-hits="40" data-linenumber="7">
+          <span class="hits">40</span>
           
           <code class="ruby">    @categories = Category.all</code>
         </li>
       
-        <li class="covered" data-hits="38" data-linenumber="8">
-          <span class="hits">38</span>
+        <li class="covered" data-hits="40" data-linenumber="8">
+          <span class="hits">40</span>
           
           <code class="ruby">    @contracts = Contract.all</code>
         </li>
@@ -1397,14 +1505,14 @@
           <code class="ruby">  def check_expired_job</code>
         </li>
       
-        <li class="covered" data-hits="38" data-linenumber="12">
-          <span class="hits">38</span>
+        <li class="covered" data-hits="40" data-linenumber="12">
+          <span class="hits">40</span>
           
           <code class="ruby">    jobs = []</code>
         </li>
       
-        <li class="covered" data-hits="38" data-linenumber="13">
-          <span class="hits">38</span>
+        <li class="covered" data-hits="40" data-linenumber="13">
+          <span class="hits">40</span>
           
           <code class="ruby">    Job.all.each do |job|</code>
         </li>
@@ -1433,8 +1541,8 @@
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="38" data-linenumber="18">
-          <span class="hits">38</span>
+        <li class="covered" data-hits="40" data-linenumber="18">
+          <span class="hits">40</span>
           
           <code class="ruby">    jobs</code>
         </li>
@@ -1895,8 +2003,8 @@
           <code class="ruby">  def carousel_for(jobs)</code>
         </li>
       
-        <li class="covered" data-hits="40" data-linenumber="3">
-          <span class="hits">40</span>
+        <li class="covered" data-hits="42" data-linenumber="3">
+          <span class="hits">42</span>
           
           <code class="ruby">    Carousel.new(self,jobs).html</code>
         </li>
@@ -1937,14 +2045,14 @@
           <code class="ruby">    def initialize(view, jobs)</code>
         </li>
       
-        <li class="covered" data-hits="40" data-linenumber="10">
-          <span class="hits">40</span>
+        <li class="covered" data-hits="42" data-linenumber="10">
+          <span class="hits">42</span>
           
           <code class="ruby">      @view, @jobs = view, jobs</code>
         </li>
       
-        <li class="covered" data-hits="40" data-linenumber="11">
-          <span class="hits">40</span>
+        <li class="covered" data-hits="42" data-linenumber="11">
+          <span class="hits">42</span>
           
           <code class="ruby">      @uid = SecureRandom.hex(6)</code>
         </li>
@@ -1967,14 +2075,14 @@
           <code class="ruby">    def html</code>
         </li>
       
-        <li class="covered" data-hits="40" data-linenumber="15">
-          <span class="hits">40</span>
+        <li class="covered" data-hits="42" data-linenumber="15">
+          <span class="hits">42</span>
           
           <code class="ruby">      content = view.safe_join([indicators, slides, controls])</code>
         </li>
       
-        <li class="covered" data-hits="40" data-linenumber="16">
-          <span class="hits">40</span>
+        <li class="covered" data-hits="42" data-linenumber="16">
+          <span class="hits">42</span>
           
           <code class="ruby">      view.content_tag(:div, content, class: &#39;carousel slide&#39;, id: @uid)</code>
         </li>
@@ -2039,14 +2147,14 @@
           <code class="ruby">    def indicators</code>
         </li>
       
-        <li class="covered" data-hits="76" data-linenumber="27">
-          <span class="hits">76</span>
+        <li class="covered" data-hits="78" data-linenumber="27">
+          <span class="hits">78</span>
           
           <code class="ruby">      items = jobs.count.times.map { |index| indicator_tag(index) }</code>
         </li>
       
-        <li class="covered" data-hits="40" data-linenumber="28">
-          <span class="hits">40</span>
+        <li class="covered" data-hits="42" data-linenumber="28">
+          <span class="hits">42</span>
           
           <code class="ruby">      content_tag(:ol, safe_join(items), class: &#39;carousel-indicators&#39;)</code>
         </li>
@@ -2141,14 +2249,14 @@
           <code class="ruby">    def slides</code>
         </li>
       
-        <li class="covered" data-hits="76" data-linenumber="44">
-          <span class="hits">76</span>
+        <li class="covered" data-hits="78" data-linenumber="44">
+          <span class="hits">78</span>
           
           <code class="ruby">      items = jobs.map.with_index { |job, index| slide_tag(job, index.zero?) }</code>
         </li>
       
-        <li class="covered" data-hits="40" data-linenumber="45">
-          <span class="hits">40</span>
+        <li class="covered" data-hits="42" data-linenumber="45">
+          <span class="hits">42</span>
           
           <code class="ruby">      content_tag(:div, safe_join(items), class: &#39;carousel-inner&#39;)</code>
         </li>
@@ -2261,8 +2369,8 @@
           <code class="ruby">    def controls</code>
         </li>
       
-        <li class="covered" data-hits="40" data-linenumber="64">
-          <span class="hits">40</span>
+        <li class="covered" data-hits="42" data-linenumber="64">
+          <span class="hits">42</span>
           
           <code class="ruby">        safe_join([control_tag(&#39;left&#39;), control_tag(&#39;right&#39;)])</code>
         </li>
@@ -2285,8 +2393,8 @@
           <code class="ruby">    def control_tag(direction)</code>
         </li>
       
-        <li class="covered" data-hits="80" data-linenumber="68">
-          <span class="hits">80</span>
+        <li class="covered" data-hits="84" data-linenumber="68">
+          <span class="hits">84</span>
           
           <code class="ruby">      options = {</code>
         </li>
@@ -2315,14 +2423,14 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="80" data-linenumber="73">
-          <span class="hits">80</span>
+        <li class="covered" data-hits="84" data-linenumber="73">
+          <span class="hits">84</span>
           
           <code class="ruby">      icon = content_tag(:i, &#39;&#39;, class: &quot;glyphicon glyphicon-chevron-#{direction}&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="80" data-linenumber="74">
-          <span class="hits">80</span>
+        <li class="covered" data-hits="84" data-linenumber="74">
+          <span class="hits">84</span>
           
           <code class="ruby">      control = link_to(icon, &quot;##{uid}&quot;, options)</code>
         </li>
