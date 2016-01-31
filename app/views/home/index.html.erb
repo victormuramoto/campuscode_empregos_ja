@@ -1,35 +1,72 @@
-<h1>Emprego Já</h1>
 
+<%= carousel_for(@jobs) %>
+
+<span class="error_message"><%= flash[:warning] %></span>
 <% if user_signed_in? %>
   Usuário Logado
 <% end %>
-
-<span class="error_message"><%= flash[:warning] %></span>
-<% @jobs.each do |job| %>
-  <% if !job.expired? %>
-    <% if job.featured %>
-      Vaga em Destaque
+<section id="jobs">
+  <% @jobs.each do |job| %>
+    <% if !job.expired? %>
+      <div class="job">
+       <h2><%= job.title %></h2>
+       <p><%= job.location %></p>
+       <p>
+         <%= job.company.name %>
+       </p>
+       <p><%= job.category.name %></p>
+       <% if job.recent? %>
+       <button type="button" class="btn btn-success btn-xs">
+         <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+         <em>Novidade</em>
+       </button>
+       <% end %>
+       <% if job.featured %>
+       <button type="button" class="btn btn-danger btn-xs">
+         <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+         <em>Vaga em Destaque</em>
+       </button>
+       <% end %>
+       <% if job.company.premium? %>
+       <button type="button" class="btn btn-primary btn-xs">
+         <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+         Anunciante Premium
+       </button>
+       <% end %>
+       <p><%= link_to 'Ver mais', job %></p>
+      </div>
     <% end %>
-    <% if job.recent? %>
-      Novidade
+  <% end %>
+</section>
+
+<section id="filters">
+  <div>
+    <h3>Filtrar por Empresas</h3>
+    <% @companies.each do |company| %>
+      <p>
+        <%= link_to company.name, company %>
+        <% if company.premium? %>
+        <button type="button" class="btn btn-primary btn-xs">
+          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+          Anunciante Premium
+        </button>
+        <% end %>
+      </p>
     <% end %>
-    Título: <%= job.title %>
-    Localização: <%= job.location %>
-    Empresa: <%= job.company.name %>
-  <% end %>
-<% end %>
+  </div>
 
-<% @companies.each do |company| %>
-  <%= link_to company.name, company %>
-  <% if company.premium? %>
-    Anunciante Premium
-  <% end %>
-<% end %>
+  <div>
+    <h3>Filtrar por Categorias</h3>
+    <% @categories.each do |category| %>
+      <p><%= link_to category.name, category %></p>
+    <% end %>
+  </div>
 
-<% @categories.each do |category| %>
-  <%= link_to category.name, category %>
-<% end %>
+  <div>
+    <h3>Filtrar por Categorias</h3>
+    <% @contracts.each do |contract| %>
+    <p><%= link_to contract.name, contract %></p>
+    <% end %>
+  </div>
 
-<% @contracts.each do |contract| %>
-  <%= link_to contract.name, contract %>
-<% end %>
+</section>

@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-01-31T15:40:35-02:00">2016-01-31T15:40:35-02:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-01-31T18:38:10-02:00">2016-01-31T18:38:10-02:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         4.26
+         8.94
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>13</b> files in total.
-    <b>133</b> relevant lines. 
-    <span class="green"><b>133</b> lines covered</span> and
+    <b>14</b> files in total.
+    <b>167</b> relevant lines. 
+    <span class="green"><b>167</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -131,6 +131,16 @@
       </tr>
       
       <tr>
+        <td class="strong"><a href="#a86e617c36edd98fe4e33c01ee150651f3313673" class="src_link" title="app/helpers/carousel_helper.rb">app/helpers/carousel_helper.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>70</td>
+        <td>34</td>
+        <td>34</td>
+        <td>0</td>
+        <td>26.3</td>
+      </tr>
+      
+      <tr>
         <td class="strong"><a href="#9bdbe74bf82274bb68ad2e8913ff9d8c35debb5a" class="src_link" title="app/models/category.rb">app/models/category.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>4</td>
@@ -147,7 +157,7 @@
         <td>7</td>
         <td>7</td>
         <td>0</td>
-        <td>6.4</td>
+        <td>11.1</td>
       </tr>
       
       <tr>
@@ -300,7 +310,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         5.83
+         6.97
        </span>
     </span> hits/line)
   </h2>
@@ -342,7 +352,7 @@
         <td>7</td>
         <td>7</td>
         <td>0</td>
-        <td>6.4</td>
+        <td>11.1</td>
       </tr>
       
       <tr>
@@ -423,16 +433,16 @@
     (<span class="covered_percent"><span class="green">100.0%</span></span>
      covered at
      <span class="covered_strength">
-       <span class="yellow">
-         1.0
+       <span class="green">
+         25.58
        </span>
     </span> hits/line)
   </h2>
   <a name="Helpers"></a>
   <div>
-    <b>1</b> files in total.
-    <b>1</b> relevant lines. 
-    <span class="green"><b>1</b> lines covered</span> and
+    <b>2</b> files in total.
+    <b>35</b> relevant lines. 
+    <span class="green"><b>35</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -457,6 +467,16 @@
         <td>1</td>
         <td>0</td>
         <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#a86e617c36edd98fe4e33c01ee150651f3313673" class="src_link" title="app/helpers/carousel_helper.rb">app/helpers/carousel_helper.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>70</td>
+        <td>34</td>
+        <td>34</td>
+        <td>0</td>
+        <td>26.3</td>
       </tr>
       
     </tbody>
@@ -1789,6 +1809,444 @@
   </pre>
 </div>
       
+        <div class="source_table" id="a86e617c36edd98fe4e33c01ee150651f3313673">
+  <div class="header">
+    <h3>app/helpers/carousel_helper.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>34</b> relevant lines. 
+      <span class="green"><b>34</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">module CarouselHelper</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def carousel_for(jobs)</code>
+        </li>
+      
+        <li class="covered" data-hits="38" data-linenumber="3">
+          <span class="hits">38</span>
+          
+          <code class="ruby">    Carousel.new(self,jobs).html</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  class Carousel</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    attr_accessor :uid</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def initialize(view, jobs)</code>
+        </li>
+      
+        <li class="covered" data-hits="38" data-linenumber="10">
+          <span class="hits">38</span>
+          
+          <code class="ruby">      @view, @jobs = view, jobs</code>
+        </li>
+      
+        <li class="covered" data-hits="38" data-linenumber="11">
+          <span class="hits">38</span>
+          
+          <code class="ruby">      @uid = SecureRandom.hex(6)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="14">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def html</code>
+        </li>
+      
+        <li class="covered" data-hits="38" data-linenumber="15">
+          <span class="hits">38</span>
+          
+          <code class="ruby">      content = view.safe_join([indicators, slides, controls])</code>
+        </li>
+      
+        <li class="covered" data-hits="38" data-linenumber="16">
+          <span class="hits">38</span>
+          
+          <code class="ruby">      view.content_tag(:div, content, class: &#39;carousel slide&#39;, id: @uid)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="20">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  private</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="22">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    attr_accessor :view, :jobs</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    delegate :link_to, :content_tag, :image_tag, :safe_join, to: :view</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="26">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def indicators</code>
+        </li>
+      
+        <li class="covered" data-hits="72" data-linenumber="27">
+          <span class="hits">72</span>
+          
+          <code class="ruby">      items = jobs.count.times.map { |index| indicator_tag(index) }</code>
+        </li>
+      
+        <li class="covered" data-hits="38" data-linenumber="28">
+          <span class="hits">38</span>
+          
+          <code class="ruby">      content_tag(:ol, safe_join(items), class: &#39;carousel-indicators&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="31">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def indicator_tag(index)</code>
+        </li>
+      
+        <li class="covered" data-hits="34" data-linenumber="32">
+          <span class="hits">34</span>
+          
+          <code class="ruby">     options = {</code>
+        </li>
+      
+        <li class="covered" data-hits="34" data-linenumber="33">
+          <span class="hits">34</span>
+          
+          <code class="ruby">       class: (index.zero? ? &#39;active&#39; : &#39;&#39;),</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
+          
+          
+          <code class="ruby">       data: {</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="35">
+          
+          
+          <code class="ruby">         target: uid,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="36">
+          
+          
+          <code class="ruby">         slide_to: index</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="37">
+          
+          
+          <code class="ruby">       }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="38">
+          
+          
+          <code class="ruby">     }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="39">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="34" data-linenumber="40">
+          <span class="hits">34</span>
+          
+          <code class="ruby">     content_tag(:li, &#39;&#39;, options)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="41">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="42">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="43">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def slides</code>
+        </li>
+      
+        <li class="covered" data-hits="72" data-linenumber="44">
+          <span class="hits">72</span>
+          
+          <code class="ruby">      items = jobs.map.with_index { |job, index| slide_tag(job, index.zero?) }</code>
+        </li>
+      
+        <li class="covered" data-hits="38" data-linenumber="45">
+          <span class="hits">38</span>
+          
+          <code class="ruby">      content_tag(:div, safe_join(items), class: &#39;carousel-inner&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="46">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="47">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="48">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def slide_tag(job, is_active)</code>
+        </li>
+      
+        <li class="covered" data-hits="34" data-linenumber="49">
+          <span class="hits">34</span>
+          
+          <code class="ruby">      options = {</code>
+        </li>
+      
+        <li class="covered" data-hits="34" data-linenumber="50">
+          <span class="hits">34</span>
+          
+          <code class="ruby">        class: (is_active ? &#39;item active&#39; : &#39;item&#39;),</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="51">
+          
+          
+          <code class="ruby">      }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="52">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="34" data-linenumber="53">
+          <span class="hits">34</span>
+          
+          <code class="ruby">      content_tag(:div, content_tag(:p, job.title), options)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="54">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="55">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="56">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def controls</code>
+        </li>
+      
+        <li class="covered" data-hits="38" data-linenumber="57">
+          <span class="hits">38</span>
+          
+          <code class="ruby">        safe_join([control_tag(&#39;left&#39;), control_tag(&#39;right&#39;)])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="58">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="59">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="60">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def control_tag(direction)</code>
+        </li>
+      
+        <li class="covered" data-hits="76" data-linenumber="61">
+          <span class="hits">76</span>
+          
+          <code class="ruby">      options = {</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="62">
+          
+          
+          <code class="ruby">        class: &quot;#{direction} carousel-control&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="63">
+          
+          
+          <code class="ruby">        data: { slide: direction == &#39;left&#39; ? &#39;prev&#39; : &#39;next&#39; }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="64">
+          
+          
+          <code class="ruby">      }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="65">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="76" data-linenumber="66">
+          <span class="hits">76</span>
+          
+          <code class="ruby">      icon = content_tag(:i, &#39;&#39;, class: &quot;glyphicon glyphicon-chevron-#{direction}&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="76" data-linenumber="67">
+          <span class="hits">76</span>
+          
+          <code class="ruby">      control = link_to(icon, &quot;##{uid}&quot;, options)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="68">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="69">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="70">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
         <div class="source_table" id="9bdbe74bf82274bb68ad2e8913ff9d8c35debb5a">
   <div class="header">
     <h3>app/models/category.rb</h3>
@@ -1893,8 +2351,8 @@
           <code class="ruby">  def premium?</code>
         </li>
       
-        <li class="covered" data-hits="39" data-linenumber="9">
-          <span class="hits">39</span>
+        <li class="covered" data-hits="72" data-linenumber="9">
+          <span class="hits">72</span>
           
           <code class="ruby">    jobs.count &gt;= 5</code>
         </li>
