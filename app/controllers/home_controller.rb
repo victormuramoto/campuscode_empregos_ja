@@ -4,6 +4,7 @@ class HomeController < ApplicationController
     @jobs = Job.all
     @companies = Company.all
     @categories = Category.all
+    @contracts = Contract.all
   end
 
 end
