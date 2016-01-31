@@ -2,44 +2,47 @@
 <%= carousel_for(@jobs) %>
 
 <span class="error_message"><%= flash[:warning] %></span>
-<% if user_signed_in? %>
-  Usuário Logado
-<% end %>
 <section id="jobs">
   <% @jobs.each do |job| %>
     <% if !job.expired? %>
       <div class="job">
-       <h2><%= job.title %></h2>
-       <p><%= job.location %></p>
-       <p>
-         <%= job.company.name %>
-       </p>
-       <p><%= job.category.name %></p>
-       <% if job.recent? %>
-       <button type="button" class="btn btn-success btn-xs">
-         <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-         <em>Novidade</em>
-       </button>
-       <% end %>
-       <% if job.featured %>
-       <button type="button" class="btn btn-danger btn-xs">
-         <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-         <em>Vaga em Destaque</em>
-       </button>
-       <% end %>
-       <% if job.company.premium? %>
-       <button type="button" class="btn btn-primary btn-xs">
-         <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-         Anunciante Premium
-       </button>
-       <% end %>
-       <p><%= link_to 'Ver mais', job %></p>
+          <div class="info">
+            <h2><%= job.title %></h2>
+             <p><strong>Localização:</strong> <%= job.location %></p>
+             <p><strong>Empresa:</strong> <%= job.company.name %></p>
+             <p><strong>Categoria:</strong> <%= job.category.name %></p>
+             <% if job.recent? %>
+             <button type="button" class="btn btn-success btn-xs">
+               <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+               <em>Novidade</em>
+             </button>
+             <% end %>
+             <% if job.featured %>
+             <button type="button" class="btn btn-danger btn-xs">
+               <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+               <em>Vaga em Destaque</em>
+             </button>
+             <% end %>
+             <% if job.company.premium? %>
+             <button type="button" class="btn btn-primary btn-xs">
+               <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+               Anunciante Premium
+             </button>
+             <% end %>
+             <p><%= link_to 'Ver mais', job %></p>
+          </div>
+          <div class="logo">
+            <% if job.company.company_image != nil %>
+              <%= image_tag (attachment_url(job.company, :company_image, :fill, 50, 50, format: "jpg")) %>
+            <% end %>
+          </div>
       </div>
     <% end %>
   <% end %>
 </section>
 
 <section id="filters">
+
   <div>
     <h3>Filtrar por Empresas</h3>
     <% @companies.each do |company| %>

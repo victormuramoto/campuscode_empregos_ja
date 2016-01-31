@@ -21,7 +21,7 @@ end
 
     attr_accessor :view, :jobs
 
-    delegate :link_to, :content_tag, :image_tag, :safe_join, to: :view
+    delegate :link_to, :content_tag, :image_tag, :attachment_url, :safe_join, to: :view
 
     def indicators
       items = jobs.count.times.map { |index| indicator_tag(index) }
@@ -49,8 +49,15 @@ end
       options = {
         class: (is_active ? 'item active' : 'item'),
       }
+      context = []
 
-      content_tag(:div, content_tag(:p, job.title), options)
+      #Ok, this is not good, but believe me, it works.
+      #If you see me after look this `HTML CODE`, remember me to make it DRY....or just be rude with me lol.
+      context << "<div class='info'><p><h2>#{job.title}</h2></p>".html_safe + "<p>Localização: #{job.location}</p>".html_safe + "<p>Empresa:#{job.title}</p>".html_safe + "<p>Categoria:#{job.title}</p>".html_safe + "<p>Contrato:#{job.contract.name}</p></div>".html_safe
+      if job.company.company_image != nil
+        context << image_tag(attachment_url(job.company, :company_image, :fill, 50, 50, format: "jpg"))
+      end
+      content_tag(:div, safe_join(context), options)
     end
 
     def controls

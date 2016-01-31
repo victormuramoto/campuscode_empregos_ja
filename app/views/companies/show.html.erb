@@ -1,9 +1,22 @@
-<% if @company.premium? %>
-  Anunciante Premium
-<% end %>
-Título: <%= @company.name %>
-Localização: <%= @company.location %>
-Categoria: <%= @company.email %>
-Empresa: <%= @company.phone %>
-Logo: <%= image_tag attachment_url(@company, :company_image, :fill, 300, 300, format: "jpg") %>
+<div class="company">
+  <div class="logo">
+    <% if @company.company_image != nil %>
+      <%= image_tag (attachment_url(@company, :company_image, :fill,100,100, format: "jpg")) %>
+    <% end %>
+  </div>
+    <div class="info">
+       <p><strong>Empresa:</strong> <%= @company.name %>
+       <p><strong>Localização:</strong>: <%= @company.location %>
+       <p><strong>Email:</strong> <%= @company.email %>
+       <p><strong>Telefone:</strong> <%= @company.phone %>
+       <% if @company.premium? %>
+         <button type="button" class="btn btn-primary btn-xs">
+           <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+           Anunciante Premium
+         </button>
+       <% end %>
+    </div>
+
+</div>
+
 <%= render @company.jobs %>

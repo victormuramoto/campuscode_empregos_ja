@@ -79,7 +79,6 @@ feature 'visitor visits the home page' do
     end
 
     visit root_path
-
     expect(page).to have_content job_1.title
 
     expect(page).to_not have_content job_2.title
