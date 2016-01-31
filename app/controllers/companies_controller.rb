@@ -12,6 +12,7 @@ class CompaniesController < ApplicationController
 
   def create
     @company = Company.new(company_params)
+    set_user
     if @company.save
       redirect_to @company
     else
@@ -35,7 +36,7 @@ class CompaniesController < ApplicationController
   private
 
   def company_params
-    params.require(:company).permit(:name,:location,:email,:phone,:user_id)
+    params.require(:company).permit(:name,:location,:email,:phone,:company_image)
   end
 
   def set_company
@@ -47,6 +48,10 @@ class CompaniesController < ApplicationController
       flash[:warning] = "Warning:You can't edit companies of other users"
       redirect_to root_path
     end
+  end
+
+  def set_user
+    @company.user = current_user
   end
 
 

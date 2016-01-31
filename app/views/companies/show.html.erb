@@ -5,5 +5,5 @@ Título: <%= @company.name %>
 Localização: <%= @company.location %>
 Categoria: <%= @company.email %>
 Empresa: <%= @company.phone %>
-
+Logo: <%= image_tag attachment_url(@company, :company_image, :fill, 300, 300, format: "jpg") %>
 <%= render @company.jobs %>

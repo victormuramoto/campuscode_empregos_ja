@@ -25,6 +25,27 @@ feature 'User can edit company' do
 
   end
 
+  scenario 'user edit a company and change the logo'  do
+    login_user
+    company = new_company
+
+    visit new_company_path
+
+    fill_in 'company[name]',        with: company.name
+    fill_in 'company[location]',    with: company.location
+    fill_in 'company[email]',       with: company.email
+    fill_in 'company[phone]',       with: company.phone
+    page.attach_file('company[company_image]', Rails.root + 'app/assets/images/twitter.jpg')
+
+    click_on 'Criar Empresa'
+
+    expect(page).to have_content company.name
+    expect(page).to have_content company.location
+    expect(page).to have_content company.email
+    expect(page).to have_content company.phone
+    expect(page).to have_css("img[src*='company_image.jpg']")
+  end
+
   scenario "User can't edit companies of other users" do
     user = login_user
 

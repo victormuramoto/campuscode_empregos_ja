@@ -31,7 +31,7 @@ feature 'User access dashboard' do
   end
 
   scenario "User can't see jobs of other users" do
-    
+
     user = login_user
     company1 = create_company(user:user)
     company2 = create_company(name:'Campus Code',user:create_user(email:'otheruser@other.com.br', password:'98765432'))

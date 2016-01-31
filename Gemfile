@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+
+gem "refile", require: "refile/rails"
+gem "refile-mini_magick"
 gem 'devise'
 gem 'rails', '4.2.4'
 gem 'sqlite3'
