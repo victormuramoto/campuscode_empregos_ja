@@ -25,6 +25,22 @@ feature 'User can edit company' do
 
   end
 
+  scenario "User can't edit companies of other users" do
+    user = login_user
+
+    company1 = create_company(user:user)
+    company2 = create_company(name:'Campus Code',
+                          location:"RS",
+                          email:'rh@campuscode.com.br',
+                          phone: '4545-4545',
+                          user:create_user(email:'otheruser@other.com.br', password:'98765432'))
+
+    visit edit_company_path(company2)
+
+    expect(page).to have_content "Warning:You can't edit companies of other users"
+
+  end
+
   scenario 'Redirected to Sign in when he is not logged' do
     company1 = create_company
     visit edit_company_path(company1)

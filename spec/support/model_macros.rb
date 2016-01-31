@@ -47,7 +47,7 @@ module ModelsMacros
   end
 
   def login_user(attrs= {})
-    user = create_user
+    user = create_user(attrs)
     visit new_user_session_path
 
     fill_in 'user[email]',           with: user.email
