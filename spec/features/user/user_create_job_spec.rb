@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'user create a job' do
   scenario 'success' do
     login_user
-    job = new_job()
+    job = new_job
 
     visit new_job_path
 
@@ -22,6 +22,24 @@ feature 'user create a job' do
     expect(page).to have_content job.category.name
     expect(page).to have_content job.description
     expect(page).to have_content job.contract.name
+
+  end
+
+  scenario 'User can just choose their own companies to create jobs' do
+    user = login_user
+
+    company1 = create_company(name:'Locaweb',user:user)
+    company2 = create_company(name:'Code Campus',user:user)
+
+    company3 = create_company(name:'Campus Code',user:create_user(email:'otheruser@other.com',password:'98765432'))
+
+    visit new_job_path
+
+    expect(page).to have_content company1.name
+    expect(page).to have_content company2.name
+
+    expect(page).to_not have_content company3.name
+
 
   end
 
