@@ -1,0 +1,34 @@
+<h1>Emprego Já</h1>
+<% if user_signed_in? %>
+  Usuário Logado
+<% end %>
+
+<span class="error_message"><%= flash[:warning] %></span>
+<% @jobs.each do |job| %>
+  <% if !job.expired? %>
+    <% if job.featured %>
+      Vaga em Destaque
+    <% end %>
+    <% if job.recent? %>
+      Novidade
+    <% end %>
+    Título: <%= job.title %>
+    Localização: <%= job.location %>
+    Empresa: <%= job.company.name %>
+  <% end %>
+<% end %>
+
+<% @companies.each do |company| %>
+  <%= link_to company.name, company %>
+  <% if company.premium? %>
+    Anunciante Premium
+  <% end %>
+<% end %>
+
+<% @categories.each do |category| %>
+  <%= link_to category.name, category %>
+<% end %>
+
+<% @contracts.each do |contract| %>
+  <%= link_to contract.name, contract %>
+<% end %>

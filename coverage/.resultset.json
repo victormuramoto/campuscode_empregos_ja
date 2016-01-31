@@ -9,6 +9,9 @@
         null,
         null,
         1,
+        1,
+        1,
+        1,
         null
       ],
       "/home/victor/workspace/campuscode/exercises/emprego-ja/app/helpers/application_helper.rb": [
@@ -22,7 +25,7 @@
         1,
         null,
         1,
-        35,
+        37,
         null,
         null
       ],
@@ -38,11 +41,11 @@
         1,
         null,
         1,
-        49,
+        52,
         null,
         null,
         1,
-        49,
+        52,
         null,
         null
       ],
@@ -57,10 +60,10 @@
         1,
         null,
         1,
-        35,
-        35,
-        35,
-        35,
+        36,
+        36,
+        36,
+        36,
         null,
         null,
         null
@@ -74,6 +77,18 @@
       "/home/victor/workspace/campuscode/exercises/emprego-ja/app/models/contract.rb": [
         1,
         1,
+        null
+      ],
+      "/home/victor/workspace/campuscode/exercises/emprego-ja/app/controllers/dashboards_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        2,
+        2,
+        2,
+        2,
+        null,
         null
       ],
       "/home/victor/workspace/campuscode/exercises/emprego-ja/app/controllers/categories_controller.rb": [
@@ -242,6 +257,6 @@
         null
       ]
     },
-    "timestamp": 1454249024
+    "timestamp": 1454250215
   }
 }
