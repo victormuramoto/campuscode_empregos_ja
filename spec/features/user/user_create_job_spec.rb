@@ -2,8 +2,8 @@ require 'rails_helper'
 
 feature 'user create a job' do
   scenario 'success' do
-    login_user
-    job = new_job
+    user = login_user
+    job = new_job(company: create_company(user:user))
 
     visit new_job_path
 
@@ -55,8 +55,10 @@ feature 'user create a job' do
 
 
   scenario 'user can feature a job' do
-    login_user
-    job = new_job(title:'Dev c#')
+
+    user = login_user
+    job = new_job(company:create_company(user:user),title:'Dev c#')
+
     visit new_job_path
 
     fill_in 'job[title]',           with: job.title

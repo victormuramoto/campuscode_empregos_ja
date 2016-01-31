@@ -2,8 +2,8 @@ require 'rails_helper'
 
 feature 'User edit job' do
   scenario 'success' do
-    login_user
-    new_company = create_company(name:"Campus Code")
+    user = login_user
+    new_company = create_company(name:"Campus Code",user:user)
     new_category = create_category(name:"Analista QA")
     new_contract = create_contract(name:"PJ")
     job = create_job
@@ -41,8 +41,8 @@ feature 'User edit job' do
   end
 
   scenario 'user wants to feature a job' do
-    login_user
-    new_company = create_company(name:"Campus Code")
+    user = login_user
+    new_company = create_company(name:"Campus Code",user:user)
     new_category = create_category(name:"Analista QA")
     new_contract = create_contract(name:"Freelancer")
     job = create_job
