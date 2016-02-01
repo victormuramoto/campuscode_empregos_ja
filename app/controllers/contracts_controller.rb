@@ -7,7 +7,7 @@ class ContractsController < ApplicationController
   end
 
   def create
-    @contract = Category.new(contract_params)
+    @contract = Contract.new(contract_params)
     if @contract.save
       redirect_to @contract
     else
