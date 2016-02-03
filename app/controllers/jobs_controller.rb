@@ -13,13 +13,8 @@ class JobsController < ApplicationController
   end
 
   def create
-    @job = Job.new(job_params)
-    if @job.save
-      redirect_to @job
-    else
-      flash[:warning] = "Warning: The fields can't be blank"
-      render :new
-    end
+    @job = Job.create(job_params)
+    respond_with @job
   end
 
   def edit
@@ -57,5 +52,5 @@ class JobsController < ApplicationController
       redirect_to root_path
     end
   end
-  
+
 end
