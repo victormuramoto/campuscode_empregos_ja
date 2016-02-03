@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+
+gem "factory_girl_rails", "~> 4.0"
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem "refile", require: "refile/rails"
