@@ -4,7 +4,8 @@ module Api
 
 
     def show
-      respond_with @company
+      @companyD = CompanyDecorator.new(@company)
+      respond_with @companyD
     end
 
     def jobs
