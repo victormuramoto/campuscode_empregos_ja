@@ -6,4 +6,10 @@ Rails.application.routes.draw do
   resources :categories, only:[:show,:new,:create]
   resources :contracts, only:[:show,:new,:create]
   resources :dashboards, only:[:index]
+
+  namespace :api, defaults:{format: :json} do
+    resources :jobs, only:[:show]
+    
+  end
+
 end
