@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 describe "Companies API" do
   it "User retrieves a specific company" do
     company = create(:company)

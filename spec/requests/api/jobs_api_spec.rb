@@ -17,13 +17,13 @@ describe "Jobs API" do
   end
 
   it "User retrieves all jobs" do
-    job1 = create_list(:job,2)
+    jobs = create_list(:job,2)
 
     get "/api/jobs"
 
     expect(response).to be_success
 
-    jobs_company1.each_with_index do |job,index|
+    jobs.each_with_index do |job,index|
       expect(json[index]['title']).to eq(job.title)
       expect(json[index]['location']).to eq(job.location)
       expect(json[index]['company_id']).to eq(job.company.id)

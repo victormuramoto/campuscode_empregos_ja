@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   resources :dashboards, only:[:index]
 
   namespace :api, defaults:{format: :json} do
-    resources :jobs, only:[:show]
-
+    resources :jobs, only:[:show,:index]
+    resources :companies, only: [:show]
   end
 
 end
