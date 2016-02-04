@@ -10,10 +10,14 @@ describe "Jobs API" do
 
     expect(json['title']).to eq(job.title)
     expect(json['location']).to eq(job.location)
-    expect(json['company_id']).to eq(job.company.id)
-    expect(json['category_id']).to eq(job.category.id)
-    expect(json['contract_id']).to eq(job.contract.id)
     expect(json['description']).to eq(job.description)
+    expect(json['contract_id']).to eq(job.contract.id)
+    expect(json['company_path']).to eq("/api/companies/#{job.company.id}")
+    expect(json['category_path']).to eq("/api/categories/#{job.category.id}")
+
+    expect(json.has_key?('company_id')).to be false
+    expect(json.has_key?('category_id')).to be false
+
   end
 
   it "User retrieves all jobs" do
@@ -26,10 +30,15 @@ describe "Jobs API" do
     jobs.each_with_index do |job,index|
       expect(json[index]['title']).to eq(job.title)
       expect(json[index]['location']).to eq(job.location)
-      expect(json[index]['company_id']).to eq(job.company.id)
-      expect(json[index]['category_id']).to eq(job.category.id)
       expect(json[index]['contract_id']).to eq(job.contract.id)
       expect(json[index]['description']).to eq(job.description)
+      expect(json[index]['company_path']).to eq("/api/companies/#{job.company.id}")
+      expect(json[index]['category_path']).to eq("/api/categories/#{job.category.id}")
+
+
+      expect(json[index].has_key?('company_id')).to be false
+      expect(json[index].has_key?('category_id')).to be false
+
     end
   end
 

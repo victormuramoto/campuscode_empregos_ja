@@ -4,11 +4,13 @@ module Api
 
     def index
       @jobs = Job.all
-      respond_with @jobs
+      @jobsD = JobsDecorator.new(@jobs)
+      respond_with @jobsD
     end
 
     def show
-      respond_with @job
+      @jobD = JobDecorator.new(@job)
+      respond_with @jobD
     end
 
     private

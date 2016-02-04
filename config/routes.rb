@@ -14,6 +14,7 @@ Rails.application.routes.draw do
         get 'jobs'
       end
     end
+    resources :categories, only: [:show]
   end
 
 end
