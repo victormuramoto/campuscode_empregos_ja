@@ -155,6 +155,38 @@
         null,
         null
       ],
+      "/home/timelocaweb8/git/victor/emprego-ja/app/models/category.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/home/timelocaweb8/git/victor/emprego-ja/app/models/contract.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/home/timelocaweb8/git/victor/emprego-ja/app/models/job.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
       "/home/timelocaweb8/git/victor/emprego-ja/app/controllers/api/jobs_controller.rb": [
         0,
         0,
@@ -378,40 +410,8 @@
         0,
         0,
         0
-      ],
-      "/home/timelocaweb8/git/victor/emprego-ja/app/models/category.rb": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "/home/timelocaweb8/git/victor/emprego-ja/app/models/contract.rb": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "/home/timelocaweb8/git/victor/emprego-ja/app/models/job.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
       ]
     },
-    "timestamp": 1454591703
+    "timestamp": 1454592187
   }
 }
