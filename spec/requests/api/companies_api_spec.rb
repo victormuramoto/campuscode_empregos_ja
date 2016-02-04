@@ -12,6 +12,7 @@ describe "Companies API" do
     expect(json['location']).to eq(company.location)
     expect(json['phone']).to eq(company.phone)
     expect(json['email']).to eq(company.email)
+    expect(json['jobs_path']).to eq("/api/companies/#{company.id}/jobs")
   end
 
   it "User retrieves all jobs from a specific company" do
