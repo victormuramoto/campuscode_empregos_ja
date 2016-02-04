@@ -11,26 +11,16 @@ class CompaniesController < ApplicationController
   end
 
   def create
-    @company = Company.new(company_params)
-    set_user
-    if @company.save
-      redirect_to @company
-    else
-      flash[:warning] = "Warning: The fields can't be blank"
-      render :new
-    end
+    @company = Company.create(company_params.merge(user: current_user))
+    respond_with @company
   end
 
   def edit
   end
 
   def update
-    if @company.update(company_params)
-      redirect_to @company
-    else
-      flash[:warning] = "Warning: The fields can't be blank"
-      render :edit
-    end
+    @company.update(company_params)
+    respond_with @company
   end
 
   private
@@ -48,10 +38,6 @@ class CompaniesController < ApplicationController
       flash[:warning] = "Warning:You can't edit companies of other users"
       redirect_to root_path
     end
-  end
-
-  def set_user
-    @company.user = current_user
   end
 
 

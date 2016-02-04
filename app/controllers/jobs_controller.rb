@@ -22,12 +22,8 @@ class JobsController < ApplicationController
   end
 
   def update
-    if @job.update(job_params)
-      redirect_to @job
-    else
-      flash[:warning] = "Warning: The fields can't be blank"
-      render :edit
-    end
+    @job.update(job_params)
+    respond_with @job
   end
 
   private

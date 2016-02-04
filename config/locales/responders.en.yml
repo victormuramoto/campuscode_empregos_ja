@@ -2,7 +2,26 @@ en:
   flash:
     jobs:
       create:
-        notice: "Warning: The fields can't be blank"
+        alert: "Warning: The fields can't be blank"
+      update:
+        alert: "Warning: The fields can't be blank"
+    companies:
+      create:
+        alert: "Warning: The fields can't be blank"
+      update:
+        alert: "Warning: The fields can't be blank"
+    contracts:
+      create:
+        alert: "Warning: The fields can't be blank"
+      update:
+        alert: "Warning: The fields can't be blank"
+    categories:
+      create:
+        alert: "Warning: The fields can't be blank"
+      update:
+        alert: "Warning: The fields can't be blank"
+
+
     actions:
       create:
         notice: '%{resource_name} was successfully created.'

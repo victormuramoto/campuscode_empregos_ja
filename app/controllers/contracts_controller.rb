@@ -7,13 +7,8 @@ class ContractsController < ApplicationController
   end
 
   def create
-    @contract = Contract.new(contract_params)
-    if @contract.save
-      redirect_to @contract
-    else
-      flash[:warning] = "Warning: The fields can't be blank"
-      render :new
-    end
+    @contract = Contract.create(contract_params)
+    respond_with @contract
   end
 
   def show

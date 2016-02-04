@@ -9,13 +9,8 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    @category = Category.new(category_params)
-    if @category.save
-      redirect_to @category
-    else
-      flash[:warning] = "Warning: The fields can't be blank"
-      render :new
-    end
+    @category = Category.create(category_params)
+    respond_with @category
   end
 
   private
