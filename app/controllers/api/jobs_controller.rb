@@ -1,7 +1,6 @@
 module Api
-  class JobsController < ApplicationController
+  class JobsController < Api::ApplicationController
     before_action :set_job, only: [:show]
-
 
     def show
       respond_with @job
