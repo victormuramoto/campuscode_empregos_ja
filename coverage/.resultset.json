@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/timelocaweb8/git/victor/emprego-ja/app/models/user.rb": [
+      "/home/victor/workspace/campuscode/exercises/emprego-ja/app/models/user.rb": [
         1,
         null,
         null,
@@ -14,11 +14,11 @@
         1,
         null
       ],
-      "/home/timelocaweb8/git/victor/emprego-ja/app/helpers/application_helper.rb": [
+      "/home/victor/workspace/campuscode/exercises/emprego-ja/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/home/timelocaweb8/git/victor/emprego-ja/app/helpers/carousel_helper.rb": [
+      "/home/victor/workspace/campuscode/exercises/emprego-ja/app/helpers/carousel_helper.rb": [
         1,
         1,
         42,
@@ -97,7 +97,7 @@
         null,
         null
       ],
-      "/home/timelocaweb8/git/victor/emprego-ja/app/models/company.rb": [
+      "/home/victor/workspace/campuscode/exercises/emprego-ja/app/models/company.rb": [
         1,
         1,
         1,
@@ -110,7 +110,7 @@
         null,
         null
       ],
-      "/home/timelocaweb8/git/victor/emprego-ja/app/models/job.rb": [
+      "/home/victor/workspace/campuscode/exercises/emprego-ja/app/models/job.rb": [
         1,
         1,
         1,
@@ -130,7 +130,7 @@
         null,
         null
       ],
-      "/home/timelocaweb8/git/victor/emprego-ja/app/controllers/application_controller.rb": [
+      "/home/victor/workspace/campuscode/exercises/emprego-ja/app/controllers/application_controller.rb": [
         1,
         null,
         1,
@@ -140,9 +140,21 @@
         null,
         null,
         1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null
       ],
-      "/home/timelocaweb8/git/victor/emprego-ja/lib/application_responder.rb": [
+      "/home/victor/workspace/campuscode/exercises/emprego-ja/lib/application_responder.rb": [
         1,
         1,
         1,
@@ -152,7 +164,7 @@
         null,
         null
       ],
-      "/home/timelocaweb8/git/victor/emprego-ja/app/controllers/home_controller.rb": [
+      "/home/victor/workspace/campuscode/exercises/emprego-ja/app/controllers/home_controller.rb": [
         1,
         null,
         1,
@@ -174,19 +186,20 @@
         null,
         null
       ],
-      "/home/timelocaweb8/git/victor/emprego-ja/app/models/category.rb": [
+      "/home/victor/workspace/campuscode/exercises/emprego-ja/app/models/category.rb": [
         1,
         1,
         1,
         null
       ],
-      "/home/timelocaweb8/git/victor/emprego-ja/app/models/contract.rb": [
+      "/home/victor/workspace/campuscode/exercises/emprego-ja/app/models/contract.rb": [
         1,
         1,
         1,
         null
       ],
-      "/home/timelocaweb8/git/victor/emprego-ja/app/controllers/dashboards_controller.rb": [
+      "/home/victor/workspace/campuscode/exercises/emprego-ja/app/controllers/dashboards_controller.rb": [
+        1,
         1,
         1,
         null,
@@ -198,7 +211,7 @@
         null,
         null
       ],
-      "/home/timelocaweb8/git/victor/emprego-ja/app/controllers/categories_controller.rb": [
+      "/home/victor/workspace/campuscode/exercises/emprego-ja/app/controllers/categories_controller.rb": [
         1,
         1,
         1,
@@ -225,7 +238,7 @@
         null,
         null
       ],
-      "/home/timelocaweb8/git/victor/emprego-ja/app/controllers/companies_controller.rb": [
+      "/home/victor/workspace/campuscode/exercises/emprego-ja/app/controllers/companies_controller.rb": [
         1,
         1,
         1,
@@ -271,7 +284,7 @@
         null,
         null
       ],
-      "/home/timelocaweb8/git/victor/emprego-ja/app/controllers/contracts_controller.rb": [
+      "/home/victor/workspace/campuscode/exercises/emprego-ja/app/controllers/contracts_controller.rb": [
         1,
         1,
         1,
@@ -299,7 +312,7 @@
         null,
         null
       ],
-      "/home/timelocaweb8/git/victor/emprego-ja/app/controllers/jobs_controller.rb": [
+      "/home/victor/workspace/campuscode/exercises/emprego-ja/app/controllers/jobs_controller.rb": [
         1,
         1,
         1,
@@ -353,7 +366,7 @@
         null,
         null
       ],
-      "/home/timelocaweb8/git/victor/emprego-ja/app/controllers/api/categories_controller.rb": [
+      "/home/victor/workspace/campuscode/exercises/emprego-ja/app/controllers/api/categories_controller.rb": [
         1,
         1,
         1,
@@ -369,7 +382,7 @@
         null,
         null
       ],
-      "/home/timelocaweb8/git/victor/emprego-ja/app/controllers/api/application_controller.rb": [
+      "/home/victor/workspace/campuscode/exercises/emprego-ja/app/controllers/api/application_controller.rb": [
         1,
         1,
         1,
@@ -382,7 +395,7 @@
         null,
         null
       ],
-      "/home/timelocaweb8/git/victor/emprego-ja/app/controllers/api/companies_controller.rb": [
+      "/home/victor/workspace/campuscode/exercises/emprego-ja/app/controllers/api/companies_controller.rb": [
         1,
         1,
         1,
@@ -410,7 +423,7 @@
         null,
         null
       ],
-      "/home/timelocaweb8/git/victor/emprego-ja/app/models/api/company_decorator.rb": [
+      "/home/victor/workspace/campuscode/exercises/emprego-ja/app/models/api/company_decorator.rb": [
         1,
         1,
         1,
@@ -435,7 +448,7 @@
         null,
         null
       ],
-      "/home/timelocaweb8/git/victor/emprego-ja/app/controllers/api/jobs_controller.rb": [
+      "/home/victor/workspace/campuscode/exercises/emprego-ja/app/controllers/api/jobs_controller.rb": [
         1,
         1,
         1,
@@ -460,7 +473,7 @@
         null,
         null
       ],
-      "/home/timelocaweb8/git/victor/emprego-ja/app/models/api/job_decorator.rb": [
+      "/home/victor/workspace/campuscode/exercises/emprego-ja/app/models/api/job_decorator.rb": [
         1,
         1,
         1,
@@ -485,7 +498,7 @@
         null,
         null
       ],
-      "/home/timelocaweb8/git/victor/emprego-ja/app/models/api/jobs_decorator.rb": [
+      "/home/victor/workspace/campuscode/exercises/emprego-ja/app/models/api/jobs_decorator.rb": [
         1,
         1,
         1,
@@ -515,6 +528,6 @@
         null
       ]
     },
-    "timestamp": 1454595934
+    "timestamp": 1456370617
   }
 }

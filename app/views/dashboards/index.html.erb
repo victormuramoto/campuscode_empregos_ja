@@ -1,6 +1,4 @@
 
-<%= carousel_for(@jobs) %>
-
 <span class="error_message"><%= flash[:warning] %></span>
 <section id="jobs">
   <% @jobs.each do |job| %>
@@ -39,37 +37,4 @@
       </div>
     <% end %>
   <% end %>
-</section>
-
-<section id="filters">
-
-  <div>
-    <h3>Filtrar por Empresas</h3>
-    <% @companies.each do |company| %>
-      <p>
-        <%= link_to company.name, company %>
-        <% if company.premium? %>
-        <button type="button" class="btn btn-primary btn-xs">
-          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-          Anunciante Premium
-        </button>
-        <% end %>
-      </p>
-    <% end %>
-  </div>
-
-  <div>
-    <h3>Filtrar por Categorias</h3>
-    <% @categories.each do |category| %>
-      <p><%= link_to category.name, category %></p>
-    <% end %>
-  </div>
-
-  <div>
-    <h3>Filtrar por Categorias</h3>
-    <% @contracts.each do |contract| %>
-    <p><%= link_to contract.name, contract %></p>
-    <% end %>
-  </div>
-
 </section>
