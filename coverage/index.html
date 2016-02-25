@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-02-25T00:23:37-03:00">2016-02-25T00:23:37-03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-02-25T01:16:10-03:00">2016-02-25T01:16:10-03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         7.99
+         7.72
        </span>
     </span> hits/line)
   </h2>
@@ -177,7 +177,7 @@
         <td>38</td>
         <td>37</td>
         <td>1</td>
-        <td>28.5</td>
+        <td>26.8</td>
       </tr>
       
       <tr>
@@ -227,7 +227,7 @@
         <td>7</td>
         <td>7</td>
         <td>0</td>
-        <td>13.6</td>
+        <td>13.3</td>
       </tr>
       
       <tr>
@@ -430,7 +430,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         4.63
+         4.6
        </span>
     </span> hits/line)
   </h2>
@@ -502,7 +502,7 @@
         <td>7</td>
         <td>7</td>
         <td>0</td>
-        <td>13.6</td>
+        <td>13.3</td>
       </tr>
       
       <tr>
@@ -584,7 +584,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         27.79
+         26.14
        </span>
     </span> hits/line)
   </h2>
@@ -626,7 +626,7 @@
         <td>38</td>
         <td>37</td>
         <td>1</td>
-        <td>28.5</td>
+        <td>26.8</td>
       </tr>
       
     </tbody>
@@ -2589,8 +2589,8 @@
           <code class="ruby">  def carousel_for(jobs)</code>
         </li>
       
-        <li class="covered" data-hits="42" data-linenumber="3">
-          <span class="hits">42</span>
+        <li class="covered" data-hits="40" data-linenumber="3">
+          <span class="hits">40</span>
           
           <code class="ruby">    Carousel.new(self,jobs).html</code>
         </li>
@@ -2631,14 +2631,14 @@
           <code class="ruby">    def initialize(view, jobs)</code>
         </li>
       
-        <li class="covered" data-hits="42" data-linenumber="10">
-          <span class="hits">42</span>
+        <li class="covered" data-hits="40" data-linenumber="10">
+          <span class="hits">40</span>
           
           <code class="ruby">      @view, @jobs = view, jobs</code>
         </li>
       
-        <li class="covered" data-hits="42" data-linenumber="11">
-          <span class="hits">42</span>
+        <li class="covered" data-hits="40" data-linenumber="11">
+          <span class="hits">40</span>
           
           <code class="ruby">      @uid = SecureRandom.hex(6)</code>
         </li>
@@ -2661,14 +2661,14 @@
           <code class="ruby">    def html</code>
         </li>
       
-        <li class="covered" data-hits="42" data-linenumber="15">
-          <span class="hits">42</span>
+        <li class="covered" data-hits="40" data-linenumber="15">
+          <span class="hits">40</span>
           
           <code class="ruby">      content = view.safe_join([indicators, slides, controls])</code>
         </li>
       
-        <li class="covered" data-hits="42" data-linenumber="16">
-          <span class="hits">42</span>
+        <li class="covered" data-hits="40" data-linenumber="16">
+          <span class="hits">40</span>
           
           <code class="ruby">      view.content_tag(:div, content, class: &#39;carousel slide&#39;, id: @uid)</code>
         </li>
@@ -2733,14 +2733,14 @@
           <code class="ruby">    def indicators</code>
         </li>
       
-        <li class="covered" data-hits="78" data-linenumber="27">
-          <span class="hits">78</span>
+        <li class="covered" data-hits="73" data-linenumber="27">
+          <span class="hits">73</span>
           
           <code class="ruby">      items = jobs.count.times.map { |index| indicator_tag(index) }</code>
         </li>
       
-        <li class="covered" data-hits="42" data-linenumber="28">
-          <span class="hits">42</span>
+        <li class="covered" data-hits="40" data-linenumber="28">
+          <span class="hits">40</span>
           
           <code class="ruby">      content_tag(:ol, safe_join(items), class: &#39;carousel-indicators&#39;)</code>
         </li>
@@ -2763,14 +2763,14 @@
           <code class="ruby">    def indicator_tag(index)</code>
         </li>
       
-        <li class="covered" data-hits="36" data-linenumber="32">
-          <span class="hits">36</span>
+        <li class="covered" data-hits="33" data-linenumber="32">
+          <span class="hits">33</span>
           
           <code class="ruby">     options = {</code>
         </li>
       
-        <li class="covered" data-hits="36" data-linenumber="33">
-          <span class="hits">36</span>
+        <li class="covered" data-hits="33" data-linenumber="33">
+          <span class="hits">33</span>
           
           <code class="ruby">       class: (index.zero? ? &#39;active&#39; : &#39;&#39;),</code>
         </li>
@@ -2811,8 +2811,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="36" data-linenumber="40">
-          <span class="hits">36</span>
+        <li class="covered" data-hits="33" data-linenumber="40">
+          <span class="hits">33</span>
           
           <code class="ruby">     content_tag(:li, &#39;&#39;, options)</code>
         </li>
@@ -2835,14 +2835,14 @@
           <code class="ruby">    def slides</code>
         </li>
       
-        <li class="covered" data-hits="78" data-linenumber="44">
-          <span class="hits">78</span>
+        <li class="covered" data-hits="73" data-linenumber="44">
+          <span class="hits">73</span>
           
           <code class="ruby">      items = jobs.map.with_index { |job, index| slide_tag(job, index.zero?) }</code>
         </li>
       
-        <li class="covered" data-hits="42" data-linenumber="45">
-          <span class="hits">42</span>
+        <li class="covered" data-hits="40" data-linenumber="45">
+          <span class="hits">40</span>
           
           <code class="ruby">      content_tag(:div, safe_join(items), class: &#39;carousel-inner&#39;)</code>
         </li>
@@ -2865,14 +2865,14 @@
           <code class="ruby">    def slide_tag(job, is_active)</code>
         </li>
       
-        <li class="covered" data-hits="36" data-linenumber="49">
-          <span class="hits">36</span>
+        <li class="covered" data-hits="33" data-linenumber="49">
+          <span class="hits">33</span>
           
           <code class="ruby">      options = {</code>
         </li>
       
-        <li class="covered" data-hits="36" data-linenumber="50">
-          <span class="hits">36</span>
+        <li class="covered" data-hits="33" data-linenumber="50">
+          <span class="hits">33</span>
           
           <code class="ruby">        class: (is_active ? &#39;item active&#39; : &#39;item&#39;),</code>
         </li>
@@ -2883,8 +2883,8 @@
           <code class="ruby">      }</code>
         </li>
       
-        <li class="covered" data-hits="36" data-linenumber="52">
-          <span class="hits">36</span>
+        <li class="covered" data-hits="33" data-linenumber="52">
+          <span class="hits">33</span>
           
           <code class="ruby">      context = []</code>
         </li>
@@ -2907,14 +2907,14 @@
           <code class="ruby">      #If you see me after look this `HTML CODE`, remember me to make it DRY....or just be rude with me lol.</code>
         </li>
       
-        <li class="covered" data-hits="36" data-linenumber="56">
-          <span class="hits">36</span>
+        <li class="covered" data-hits="33" data-linenumber="56">
+          <span class="hits">33</span>
           
           <code class="ruby">      context &lt;&lt; &quot;&lt;div class=&#39;info&#39;&gt;&lt;p&gt;&lt;h2&gt;#{job.title}&lt;/h2&gt;&lt;/p&gt;&quot;.html_safe + &quot;&lt;p&gt;Localização: #{job.location}&lt;/p&gt;&quot;.html_safe + &quot;&lt;p&gt;Empresa:#{job.title}&lt;/p&gt;&quot;.html_safe + &quot;&lt;p&gt;Categoria:#{job.title}&lt;/p&gt;&quot;.html_safe + &quot;&lt;p&gt;Contrato:#{job.contract.name}&lt;/p&gt;&lt;/div&gt;&quot;.html_safe</code>
         </li>
       
-        <li class="covered" data-hits="36" data-linenumber="57">
-          <span class="hits">36</span>
+        <li class="covered" data-hits="33" data-linenumber="57">
+          <span class="hits">33</span>
           
           <code class="ruby">      if job.company.company_image != nil</code>
         </li>
@@ -2931,8 +2931,8 @@
           <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="36" data-linenumber="60">
-          <span class="hits">36</span>
+        <li class="covered" data-hits="33" data-linenumber="60">
+          <span class="hits">33</span>
           
           <code class="ruby">      content_tag(:div, safe_join(context), options)</code>
         </li>
@@ -2955,8 +2955,8 @@
           <code class="ruby">    def controls</code>
         </li>
       
-        <li class="covered" data-hits="42" data-linenumber="64">
-          <span class="hits">42</span>
+        <li class="covered" data-hits="40" data-linenumber="64">
+          <span class="hits">40</span>
           
           <code class="ruby">        safe_join([control_tag(&#39;left&#39;), control_tag(&#39;right&#39;)])</code>
         </li>
@@ -2979,8 +2979,8 @@
           <code class="ruby">    def control_tag(direction)</code>
         </li>
       
-        <li class="covered" data-hits="84" data-linenumber="68">
-          <span class="hits">84</span>
+        <li class="covered" data-hits="80" data-linenumber="68">
+          <span class="hits">80</span>
           
           <code class="ruby">      options = {</code>
         </li>
@@ -3009,14 +3009,14 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="84" data-linenumber="73">
-          <span class="hits">84</span>
+        <li class="covered" data-hits="80" data-linenumber="73">
+          <span class="hits">80</span>
           
           <code class="ruby">      icon = content_tag(:i, &#39;&#39;, class: &quot;glyphicon glyphicon-chevron-#{direction}&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="84" data-linenumber="74">
-          <span class="hits">84</span>
+        <li class="covered" data-hits="80" data-linenumber="74">
+          <span class="hits">80</span>
           
           <code class="ruby">      control = link_to(icon, &quot;##{uid}&quot;, options)</code>
         </li>
@@ -3639,8 +3639,8 @@
           <code class="ruby">  def premium?</code>
         </li>
       
-        <li class="covered" data-hits="89" data-linenumber="9">
-          <span class="hits">89</span>
+        <li class="covered" data-hits="87" data-linenumber="9">
+          <span class="hits">87</span>
           
           <code class="ruby">    jobs.count &gt;= 5</code>
         </li>
